@@ -1,0 +1,59 @@
+object Form1: TForm1
+  Left = 344
+  Height = 601
+  Top = 201
+  Width = 1071
+  Caption = 'Lazarus DirectX Math Test'
+  ClientHeight = 601
+  ClientWidth = 1071
+  OnCreate = FormCreate
+  LCLVersion = '1.8.0.5'
+  object Memo1: TMemo
+    Left = 16
+    Height = 290
+    Top = 304
+    Width = 1046
+    Color = clBackground
+    Font.Color = clLime
+    Font.Height = -17
+    Font.Name = 'Courier New'
+    Lines.Strings = (
+      'Memo1'
+    )
+    ParentFont = False
+    ScrollBars = ssBoth
+    TabOrder = 0
+  end
+  object PageControl1: TPageControl
+    Left = 16
+    Height = 264
+    Top = 24
+    Width = 1046
+    ActivePage = TabSheet1
+    TabIndex = 0
+    TabOrder = 1
+    object TabSheet1: TTabSheet
+      Caption = 'XMVector4'
+      ClientHeight = 236
+      ClientWidth = 1038
+      object btnXMVectorReplicate: TButton
+        Left = 8
+        Height = 25
+        Top = 24
+        Width = 176
+        Caption = 'XMVectorReplicate'
+        OnClick = btnXMVectorReplicateClick
+        TabOrder = 0
+      end
+      object btnXMVector4GreaterOrEqual: TButton
+        Left = 8
+        Height = 25
+        Top = 56
+        Width = 176
+        Caption = 'XMVector4GreaterOrEqual'
+        OnClick = btnXMVector4GreaterOrEqualClick
+        TabOrder = 1
+      end
+    end
+  end
+end
