@@ -1,6 +1,9 @@
 # DirectXMath
 DirectX Math SIMD Pascal Math library 
 
+You need FPC Compiler with latest version v3.0.4 to compile.
+Delphi is NOT supported currently.
+
 -----------
 DirectXMath
 -----------
