@@ -1,18 +1,18 @@
 object Form1: TForm1
-  Left = 344
+  Left = 166
   Height = 601
-  Top = 201
-  Width = 1071
+  Top = 142
+  Width = 1486
   Caption = 'Lazarus DirectX Math Test'
   ClientHeight = 601
-  ClientWidth = 1071
+  ClientWidth = 1486
   OnCreate = FormCreate
-  LCLVersion = '1.8.0.5'
+  LCLVersion = '1.8.0.6'
   object Memo1: TMemo
     Left = 16
-    Height = 290
-    Top = 304
-    Width = 1046
+    Height = 314
+    Top = 280
+    Width = 1464
     Color = clBackground
     Font.Color = clLime
     Font.Height = -17
@@ -26,33 +26,3037 @@ object Form1: TForm1
   end
   object PageControl1: TPageControl
     Left = 16
-    Height = 264
+    Height = 248
     Top = 24
-    Width = 1046
-    ActivePage = TabSheet1
-    TabIndex = 0
+    Width = 1462
+    ActivePage = TabSheet4
+    TabIndex = 2
     TabOrder = 1
-    object TabSheet1: TTabSheet
-      Caption = 'XMVector4'
-      ClientHeight = 236
-      ClientWidth = 1038
+    object TabSheet2: TTabSheet
+      Caption = 'Misc'
+      ClientHeight = 220
+      ClientWidth = 1454
+      object btnXMConvertVectorFloatToInt: TButton
+        Left = 8
+        Height = 25
+        Top = 48
+        Width = 176
+        Caption = 'XMConvertVectorFloatToInt'
+        OnClick = btnXMConvertVectorFloatToIntClick
+        TabOrder = 0
+      end
+      object btnXMConvertVectorIntToFloat: TButton
+        Left = 8
+        Height = 25
+        Top = 16
+        Width = 176
+        Caption = 'XMConvertVectorIntToFloat'
+        OnClick = btnXMConvertVectorIntToFloatClick
+        TabOrder = 1
+      end
+      object btnXMConvertVectorUIntToFloat: TButton
+        Left = 8
+        Height = 25
+        Top = 80
+        Width = 176
+        Caption = 'XMConvertVectorUIntToFloat'
+        OnClick = btnXMConvertVectorUIntToFloatClick
+        TabOrder = 2
+      end
+      object btnXMConvertVectorFloatToUInt: TButton
+        Left = 8
+        Height = 25
+        Top = 112
+        Width = 176
+        Caption = 'XMConvertVectorFloatToUInt'
+        OnClick = btnXMConvertVectorFloatToUIntClick
+        TabOrder = 3
+      end
+      object btnXMVectorSetBinaryConstant: TButton
+        Left = 8
+        Height = 25
+        Top = 144
+        Width = 176
+        Caption = 'XMVectorSetBinaryConstant'
+        OnClick = btnXMVectorSetBinaryConstantClick
+        TabOrder = 4
+      end
+      object btnXMVectorSplatConstant: TButton
+        Left = 8
+        Height = 25
+        Top = 176
+        Width = 176
+        Caption = 'XMVectorSplatConstant'
+        OnClick = btnXMVectorSplatConstantClick
+        TabOrder = 5
+      end
+      object btnXMVectorSplatConstantInt: TButton
+        Left = 192
+        Height = 25
+        Top = 16
+        Width = 176
+        Caption = 'XMVectorSplatConstantInt'
+        OnClick = btnXMVectorSplatConstantIntClick
+        TabOrder = 6
+      end
+      object btnXMScalarCos: TButton
+        Left = 648
+        Height = 25
+        Top = 8
+        Width = 152
+        Caption = 'XMScalarCos'
+        TabOrder = 7
+      end
+      object btnXMScalarCosEst: TButton
+        Left = 648
+        Height = 25
+        Top = 36
+        Width = 152
+        Caption = 'XMScalarCosEst'
+        TabOrder = 8
+      end
+      object btnXMScalarSinCos: TButton
+        Left = 648
+        Height = 25
+        Top = 64
+        Width = 152
+        Caption = 'XMScalarSinCos'
+        OnClick = btnXMVectorTanEstClick
+        TabOrder = 9
+      end
+      object btnXMScalarSinCosEst: TButton
+        Left = 648
+        Height = 25
+        Top = 92
+        Width = 152
+        Caption = 'XMScalarSinCosEst'
+        TabOrder = 10
+      end
+      object btnXMScalarASin: TButton
+        Left = 648
+        Height = 25
+        Top = 120
+        Width = 152
+        Caption = 'XMScalarASin'
+        TabOrder = 11
+      end
+      object btnXMScalarASinEst: TButton
+        Left = 648
+        Height = 25
+        Top = 148
+        Width = 152
+        Caption = 'XMScalarASinEst'
+        TabOrder = 12
+      end
+      object btnXMVerifyCPUSupport: TButton
+        Left = 488
+        Height = 25
+        Top = 8
+        Width = 152
+        Caption = 'XMVerifyCPUSupport'
+        TabOrder = 13
+      end
+      object btnXMFresnelTerm: TButton
+        Left = 488
+        Height = 25
+        Top = 36
+        Width = 152
+        Caption = 'XMFresnelTerm'
+        OnClick = btnXMVectorTanEstClick
+        TabOrder = 14
+      end
+      object btnXMScalarNearEqual: TButton
+        Left = 488
+        Height = 25
+        Top = 64
+        Width = 152
+        Caption = 'XMScalarNearEqual'
+        TabOrder = 15
+      end
+      object btnXMScalarModAngle: TButton
+        Left = 488
+        Height = 25
+        Top = 92
+        Width = 152
+        Caption = 'XMScalarModAngle'
+        TabOrder = 16
+      end
+      object btnXMScalarSin: TButton
+        Left = 488
+        Height = 25
+        Top = 120
+        Width = 152
+        Caption = 'XMScalarSin'
+        TabOrder = 17
+      end
+      object btnXMScalarSinEst: TButton
+        Left = 488
+        Height = 25
+        Top = 148
+        Width = 152
+        Caption = 'XMScalarSinEst'
+        TabOrder = 18
+      end
+      object btnXMScalarACos: TButton
+        Left = 808
+        Height = 25
+        Top = 8
+        Width = 152
+        Caption = 'XMScalarACos'
+        OnClick = btnXMVectorTanEstClick
+        TabOrder = 19
+      end
+      object btnXMScalarACosEst: TButton
+        Left = 808
+        Height = 25
+        Top = 36
+        Width = 152
+        Caption = 'XMScalarACosEst'
+        TabOrder = 20
+      end
+      object btnXMMin: TButton
+        Left = 808
+        Height = 25
+        Top = 64
+        Width = 152
+        Caption = 'XMMin'
+        TabOrder = 21
+      end
+      object btnXMMax: TButton
+        Left = 808
+        Height = 25
+        Top = 92
+        Width = 152
+        Caption = 'XMMax'
+        TabOrder = 22
+      end
+      object btnXMConvertToRadians: TButton
+        Left = 984
+        Height = 25
+        Top = 8
+        Width = 152
+        Caption = 'XMConvertToRadians'
+        TabOrder = 23
+      end
+      object btnXMConvertToDegrees: TButton
+        Left = 984
+        Height = 25
+        Top = 36
+        Width = 152
+        Caption = 'XMConvertToDegrees'
+        TabOrder = 24
+      end
+      object btnXMComparisonAllTrue: TButton
+        Left = 984
+        Height = 25
+        Top = 64
+        Width = 152
+        Caption = 'XMComparisonAllTrue'
+        TabOrder = 25
+      end
+      object btnXMComparisonAnyTrue: TButton
+        Left = 984
+        Height = 25
+        Top = 92
+        Width = 152
+        Caption = 'XMComparisonAnyTrue'
+        TabOrder = 26
+      end
+      object btnXMComparisonAllFalse: TButton
+        Left = 984
+        Height = 25
+        Top = 120
+        Width = 152
+        Caption = 'XMComparisonAllFalse'
+        TabOrder = 27
+      end
+      object btnXMComparisonAnyFalse: TButton
+        Left = 984
+        Height = 25
+        Top = 148
+        Width = 152
+        Caption = 'XMComparisonAnyFalse'
+        TabOrder = 28
+      end
+      object btnXMComparisonMixed: TButton
+        Left = 1144
+        Height = 25
+        Top = 8
+        Width = 152
+        Caption = 'XMComparisonMixed'
+        TabOrder = 29
+      end
+      object btnXMComparisonAllInBounds: TButton
+        Left = 1144
+        Height = 25
+        Top = 36
+        Width = 152
+        Caption = 'XMComparisonAllInBounds'
+        TabOrder = 30
+      end
+      object btnXMComparisonAnyOutOfBounds: TButton
+        Left = 1144
+        Height = 25
+        Top = 64
+        Width = 152
+        Caption = 'XMComparisonAnyOutOfBounds'
+        TabOrder = 31
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Load/Store operations '
+      ClientHeight = 220
+      ClientWidth = 1454
+      object btnXMStoreInt2: TButton
+        Left = 8
+        Height = 25
+        Top = 64
+        Width = 128
+        Caption = 'XMStoreInt2'
+        OnClick = btnXMStoreInt2Click
+        TabOrder = 0
+      end
+      object btnXMStoreInt3: TButton
+        Left = 144
+        Height = 25
+        Top = 36
+        Width = 128
+        Caption = 'XMStoreInt3'
+        OnClick = btnXMStoreInt3Click
+        TabOrder = 1
+      end
+      object btnXMStoreInt4: TButton
+        Left = 280
+        Height = 25
+        Top = 8
+        Width = 128
+        Caption = 'XMStoreInt4'
+        OnClick = btnXMStoreInt4Click
+        TabOrder = 2
+      end
+      object btnXMStoreInt2A: TButton
+        Left = 8
+        Height = 25
+        Top = 92
+        Width = 128
+        Caption = 'XMStoreInt2A'
+        OnClick = btnXMStoreInt2AClick
+        TabOrder = 3
+      end
+      object btnXMStoreFloat2: TButton
+        Left = 8
+        Height = 25
+        Top = 120
+        Width = 128
+        Caption = 'XMStoreFloat2'
+        OnClick = btnXMStoreFloat2Click
+        TabOrder = 4
+      end
+      object btnXMStoreFloat2A: TButton
+        Left = 8
+        Height = 25
+        Top = 148
+        Width = 128
+        Caption = 'XMStoreFloat2A'
+        OnClick = btnXMStoreFloat2AClick
+        TabOrder = 5
+      end
+      object btnXMStoreSInt2: TButton
+        Left = 8
+        Height = 25
+        Top = 176
+        Width = 128
+        Caption = 'XMStoreSInt2'
+        OnClick = btnXMStoreSInt2Click
+        TabOrder = 6
+      end
+      object btnXMStoreInt: TButton
+        Left = 8
+        Height = 25
+        Top = 8
+        Width = 128
+        Caption = 'XMStoreInt'
+        OnClick = btnXMStoreIntClick
+        TabOrder = 7
+      end
+      object btnXMStoreFloat: TButton
+        Left = 8
+        Height = 25
+        Top = 36
+        Width = 128
+        Caption = 'XMStoreFloat'
+        OnClick = btnXMStoreFloatClick
+        TabOrder = 8
+      end
+      object btnXMStoreUInt2: TButton
+        Left = 144
+        Height = 25
+        Top = 8
+        Width = 128
+        Caption = 'XMStoreUInt2'
+        OnClick = btnXMStoreUInt2Click
+        TabOrder = 9
+      end
+      object btnXMStoreInt3A: TButton
+        Left = 144
+        Height = 25
+        Top = 64
+        Width = 128
+        Caption = 'XMStoreInt3A'
+        OnClick = btnXMStoreInt3AClick
+        TabOrder = 10
+      end
+      object btnXMStoreFloat3: TButton
+        Left = 144
+        Height = 25
+        Top = 92
+        Width = 128
+        Caption = 'XMStoreFloat3'
+        OnClick = btnXMStoreFloat3Click
+        TabOrder = 11
+      end
+      object btnXMStoreFloat3A: TButton
+        Left = 144
+        Height = 25
+        Top = 120
+        Width = 128
+        Caption = 'XMStoreFloat3A'
+        OnClick = btnXMStoreFloat3AClick
+        TabOrder = 12
+      end
+      object btnXMStoreSInt3: TButton
+        Left = 144
+        Height = 25
+        Top = 148
+        Width = 128
+        Caption = 'XMStoreSInt3'
+        OnClick = btnXMStoreSInt3Click
+        TabOrder = 13
+      end
+      object btnXMStoreUInt3: TButton
+        Left = 144
+        Height = 25
+        Top = 176
+        Width = 128
+        Caption = 'XMStoreUInt3'
+        OnClick = btnXMStoreUInt3Click
+        TabOrder = 14
+      end
+      object btnXMStoreInt4A: TButton
+        Left = 280
+        Height = 25
+        Top = 36
+        Width = 128
+        Caption = 'XMStoreInt4A'
+        OnClick = btnXMStoreInt4AClick
+        TabOrder = 15
+      end
+      object btnXMStoreFloat4: TButton
+        Left = 280
+        Height = 25
+        Top = 64
+        Width = 128
+        Caption = 'XMStoreFloat4'
+        OnClick = btnXMStoreFloat4Click
+        TabOrder = 16
+      end
+      object btnXMStoreFloat4A: TButton
+        Left = 280
+        Height = 25
+        Top = 92
+        Width = 128
+        Caption = 'XMStoreFloat4A'
+        OnClick = btnXMStoreFloat4AClick
+        TabOrder = 17
+      end
+      object btnXMStoreSInt4: TButton
+        Left = 280
+        Height = 25
+        Top = 120
+        Width = 128
+        Caption = 'XMStoreSInt4'
+        OnClick = btnXMStoreSInt4Click
+        TabOrder = 18
+      end
+      object btnXMStoreUInt4: TButton
+        Left = 280
+        Height = 25
+        Top = 148
+        Width = 128
+        Caption = 'XMStoreUInt4'
+        OnClick = btnXMStoreUInt4Click
+        TabOrder = 19
+      end
+      object btnXMStoreFloat3x3: TButton
+        Left = 416
+        Height = 25
+        Top = 8
+        Width = 152
+        Caption = 'XMStoreFloat3x3'
+        TabOrder = 20
+      end
+      object btnXMStoreFloat4x3: TButton
+        Left = 416
+        Height = 25
+        Top = 36
+        Width = 152
+        Caption = 'XMStoreFloat4x3'
+        TabOrder = 21
+      end
+      object btnXMStoreFloat4x3A: TButton
+        Left = 416
+        Height = 25
+        Top = 64
+        Width = 152
+        Caption = 'XMStoreFloat4x3A'
+        TabOrder = 22
+      end
+      object btnXMStoreFloat4x4: TButton
+        Left = 416
+        Height = 25
+        Top = 92
+        Width = 152
+        Caption = 'XMStoreFloat4x4'
+        TabOrder = 23
+      end
+      object btnXMStoreFloat4x4A: TButton
+        Left = 416
+        Height = 25
+        Top = 120
+        Width = 152
+        Caption = 'XMStoreFloat4x4A'
+        TabOrder = 24
+      end
+      object btnXMLoadInt: TButton
+        Left = 576
+        Height = 25
+        Top = 8
+        Width = 131
+        Caption = 'XMLoadInt'
+        TabOrder = 25
+      end
+      object btnXMLoadFloat: TButton
+        Left = 576
+        Height = 25
+        Top = 36
+        Width = 131
+        Caption = 'XMLoadFloat'
+        TabOrder = 26
+      end
+      object btnXMLoadInt2: TButton
+        Left = 576
+        Height = 25
+        Top = 64
+        Width = 131
+        Caption = 'XMLoadInt2'
+        TabOrder = 27
+      end
+      object btnXMLoadInt2A: TButton
+        Left = 576
+        Height = 25
+        Top = 92
+        Width = 131
+        Caption = 'XMLoadInt2A'
+        TabOrder = 28
+      end
+      object btnXMLoadFloat2: TButton
+        Left = 576
+        Height = 25
+        Top = 120
+        Width = 131
+        Caption = 'XMLoadFloat2'
+        TabOrder = 29
+      end
+      object btnXMLoadFloat2A: TButton
+        Left = 576
+        Height = 25
+        Top = 148
+        Width = 131
+        Caption = 'XMLoadFloat2A'
+        TabOrder = 30
+      end
+      object btnXMLoadSInt2: TButton
+        Left = 576
+        Height = 25
+        Top = 176
+        Width = 131
+        Caption = 'XMLoadSInt2'
+        TabOrder = 31
+      end
+      object btnXMLoadUInt2: TButton
+        Left = 712
+        Height = 25
+        Top = 8
+        Width = 131
+        Caption = 'XMLoadUInt2'
+        TabOrder = 32
+      end
+      object btnXMLoadInt3: TButton
+        Left = 712
+        Height = 25
+        Top = 36
+        Width = 131
+        Caption = 'XMLoadInt3'
+        TabOrder = 33
+      end
+      object btnXMLoadInt3A: TButton
+        Left = 712
+        Height = 25
+        Top = 64
+        Width = 131
+        Caption = 'XMLoadInt3A'
+        TabOrder = 34
+      end
+      object btnXMLoadFloat3: TButton
+        Left = 712
+        Height = 25
+        Top = 92
+        Width = 131
+        Caption = 'XMLoadFloat3'
+        TabOrder = 35
+      end
+      object btnXMLoadFloat3_2: TButton
+        Left = 712
+        Height = 25
+        Top = 120
+        Width = 131
+        Caption = 'XMLoadFloat3 (2)'
+        TabOrder = 36
+      end
+      object btnXMLoadFloat3A: TButton
+        Left = 712
+        Height = 25
+        Top = 148
+        Width = 131
+        Caption = 'XMLoadFloat3A'
+        TabOrder = 37
+      end
+      object btnXMLoadSInt3: TButton
+        Left = 712
+        Height = 25
+        Top = 176
+        Width = 131
+        Caption = 'XMLoadSInt3'
+        TabOrder = 38
+      end
+      object btnXMLoadUInt3: TButton
+        Left = 848
+        Height = 25
+        Top = 8
+        Width = 131
+        Caption = 'XMLoadUInt3'
+        TabOrder = 39
+      end
+      object btnXMLoadInt4: TButton
+        Left = 848
+        Height = 25
+        Top = 36
+        Width = 131
+        Caption = 'XMLoadInt4'
+        TabOrder = 40
+      end
+      object btnXMLoadInt4A: TButton
+        Left = 848
+        Height = 25
+        Top = 64
+        Width = 131
+        Caption = 'XMLoadInt4A'
+        TabOrder = 41
+      end
+      object btnXMLoadFloat4: TButton
+        Left = 848
+        Height = 25
+        Top = 92
+        Width = 131
+        Caption = 'XMLoadFloat4'
+        TabOrder = 42
+      end
+      object btnXMLoadFloat4_2: TButton
+        Left = 848
+        Height = 25
+        Top = 120
+        Width = 131
+        Caption = 'XMLoadFloat4 (2)'
+        TabOrder = 43
+      end
+      object btnXMLoadFloat4A: TButton
+        Left = 848
+        Height = 25
+        Top = 148
+        Width = 131
+        Caption = 'XMLoadFloat4A'
+        TabOrder = 44
+      end
+      object btnXMLoadSInt4: TButton
+        Left = 848
+        Height = 25
+        Top = 176
+        Width = 131
+        Caption = 'XMLoadSInt4'
+        TabOrder = 45
+      end
+      object btnXMLoadUInt4: TButton
+        Left = 984
+        Height = 25
+        Top = 8
+        Width = 131
+        Caption = 'XMLoadUInt4'
+        TabOrder = 46
+      end
+      object btnXMLoadFloat3x3: TButton
+        Left = 984
+        Height = 25
+        Top = 36
+        Width = 131
+        Caption = 'XMLoadFloat3x3'
+        TabOrder = 47
+      end
+      object btnXMLoadFloat4x3: TButton
+        Left = 984
+        Height = 25
+        Top = 64
+        Width = 131
+        Caption = 'XMLoadFloat4x3'
+        TabOrder = 48
+      end
+      object btnXMLoadFloat4x3A: TButton
+        Left = 984
+        Height = 25
+        Top = 92
+        Width = 131
+        Caption = 'XMLoadFloat4x3A'
+        TabOrder = 49
+      end
+      object btnXMLoadFloat4x4: TButton
+        Left = 984
+        Height = 25
+        Top = 120
+        Width = 131
+        Caption = 'XMLoadFloat4x4'
+        TabOrder = 50
+      end
+      object btnXMLoadFloat4x4A: TButton
+        Left = 984
+        Height = 25
+        Top = 148
+        Width = 131
+        Caption = 'XMLoadFloat4x4A'
+        TabOrder = 51
+      end
+      object Button58: TButton
+        Left = 984
+        Height = 25
+        Top = 176
+        Width = 131
+        Caption = 'Button58'
+        TabOrder = 52
+      end
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'General vector operations'
+      ClientHeight = 220
+      ClientWidth = 1454
+      object btnXMVectorZero: TButton
+        Left = 8
+        Height = 25
+        Top = 8
+        Width = 136
+        Caption = 'XMVectorZero'
+        OnClick = btnXMVectorZeroClick
+        TabOrder = 0
+      end
+      object btnXMVectorSet: TButton
+        Left = 8
+        Height = 25
+        Top = 40
+        Width = 136
+        Caption = 'XMVectorSet'
+        OnClick = btnXMVectorSetClick
+        TabOrder = 1
+      end
+      object btnXMVectorSetInt: TButton
+        Left = 8
+        Height = 25
+        Top = 72
+        Width = 136
+        Caption = 'XMVectorSetInt'
+        OnClick = btnXMVectorSetIntClick
+        TabOrder = 2
+      end
+      object bntXMVectorGetByIndex: TButton
+        Left = 440
+        Height = 25
+        Top = 8
+        Width = 136
+        Caption = 'XMVectorGetByIndex'
+        OnClick = bntXMVectorGetByIndexClick
+        TabOrder = 3
+      end
+      object btnXMVectorReplicatePtr: TButton
+        Left = 8
+        Height = 25
+        Top = 136
+        Width = 136
+        Caption = 'XMVectorReplicatePtr'
+        OnClick = btnXMVectorReplicatePtrClick
+        TabOrder = 4
+      end
+      object btnXMVectorReplicateInt: TButton
+        Left = 8
+        Height = 25
+        Top = 168
+        Width = 136
+        Caption = 'XMVectorReplicateInt'
+        OnClick = btnXMVectorReplicateIntClick
+        TabOrder = 5
+      end
+      object btnXMVectorReplicateIntPtr: TButton
+        Left = 152
+        Height = 25
+        Top = 8
+        Width = 136
+        Caption = 'XMVectorReplicateIntPtr'
+        OnClick = btnXMVectorReplicateIntPtrClick
+        TabOrder = 6
+      end
+      object btnXMVectorTrueInt: TButton
+        Left = 152
+        Height = 25
+        Top = 40
+        Width = 136
+        Caption = 'XMVectorTrueInt'
+        OnClick = btnXMVectorTrueIntClick
+        TabOrder = 7
+      end
+      object btnXMVectorFalseInt: TButton
+        Left = 152
+        Height = 25
+        Top = 72
+        Width = 136
+        Caption = 'XMVectorFalseInt'
+        OnClick = btnXMVectorFalseIntClick
+        TabOrder = 8
+      end
+      object btnXMVectorSplatX: TButton
+        Left = 152
+        Height = 25
+        Top = 104
+        Width = 136
+        Caption = 'XMVectorSplatX'
+        OnClick = btnXMVectorSplatXClick
+        TabOrder = 9
+      end
+      object btnXMVectorSplatY: TButton
+        Left = 152
+        Height = 25
+        Top = 136
+        Width = 136
+        Caption = 'XMVectorSplatY'
+        OnClick = btnXMVectorSplatYClick
+        TabOrder = 10
+      end
+      object btnXMVectorSplatZ: TButton
+        Left = 152
+        Height = 25
+        Top = 168
+        Width = 136
+        Caption = 'XMVectorSplatZ'
+        OnClick = btnXMVectorSplatZClick
+        TabOrder = 11
+      end
+      object btnXMVectorSplatW: TButton
+        Left = 296
+        Height = 25
+        Top = 8
+        Width = 136
+        Caption = 'XMVectorSplatW'
+        OnClick = btnXMVectorSplatWClick
+        TabOrder = 12
+      end
+      object btnXMVectorSplatOne: TButton
+        Left = 296
+        Height = 25
+        Top = 40
+        Width = 136
+        Caption = 'XMVectorSplatOne'
+        OnClick = btnXMVectorSplatOneClick
+        TabOrder = 13
+      end
+      object btnXMVectorSplatInfinity: TButton
+        Left = 296
+        Height = 25
+        Top = 72
+        Width = 136
+        Caption = 'XMVectorSplatInfinity'
+        OnClick = btnXMVectorSplatInfinityClick
+        TabOrder = 14
+      end
+      object btnXMVectorSplatQNaN: TButton
+        Left = 296
+        Height = 25
+        Top = 104
+        Width = 136
+        Caption = 'XMVectorSplatQNaN'
+        OnClick = btnXMVectorSplatQNaNClick
+        TabOrder = 15
+      end
+      object btnXMVectorSplatEpsilon: TButton
+        Left = 296
+        Height = 25
+        Top = 136
+        Width = 136
+        Caption = 'XMVectorSplatEpsilon'
+        OnClick = btnXMVectorSplatEpsilonClick
+        TabOrder = 16
+      end
+      object btnXMVectorSplatSignMask: TButton
+        Left = 296
+        Height = 25
+        Top = 168
+        Width = 136
+        Caption = 'XMVectorSplatSignMask'
+        OnClick = btnXMVectorSplatSignMaskClick
+        TabOrder = 17
+      end
       object btnXMVectorReplicate: TButton
         Left = 8
         Height = 25
-        Top = 24
-        Width = 176
+        Top = 104
+        Width = 136
         Caption = 'XMVectorReplicate'
         OnClick = btnXMVectorReplicateClick
-        TabOrder = 0
+        TabOrder = 18
       end
-      object btnXMVector4GreaterOrEqual: TButton
+      object btnXMVectorGetX: TButton
+        Left = 440
+        Height = 25
+        Top = 40
+        Width = 136
+        Caption = 'XMVectorGetX'
+        OnClick = btnXMVectorGetXClick
+        TabOrder = 19
+      end
+      object btnXMVectorGetY: TButton
+        Left = 440
+        Height = 25
+        Top = 72
+        Width = 136
+        Caption = 'XMVectorGetY'
+        OnClick = btnXMVectorGetYClick
+        TabOrder = 20
+      end
+      object btnXMVectorGetZ: TButton
+        Left = 440
+        Height = 25
+        Top = 104
+        Width = 136
+        Caption = 'XMVectorGetZ'
+        OnClick = btnXMVectorGetZClick
+        TabOrder = 21
+      end
+      object btnXMVectorGetW: TButton
+        Left = 440
+        Height = 25
+        Top = 136
+        Width = 136
+        Caption = 'XMVectorGetW'
+        OnClick = btnXMVectorGetWClick
+        TabOrder = 22
+      end
+      object btnXMVectorGetByIndexPtr: TButton
+        Left = 440
+        Height = 25
+        Top = 168
+        Width = 136
+        Caption = 'XMVectorGetByIndexPtr'
+        OnClick = btnXMVectorGetByIndexPtrClick
+        TabOrder = 23
+      end
+      object btnXMVectorGetXPtr: TButton
+        Left = 584
+        Height = 25
+        Top = 8
+        Width = 136
+        Caption = 'XMVectorGetXPtr'
+        OnClick = btnXMVectorGetXPtrClick
+        TabOrder = 24
+      end
+      object btnXMVectorGetYPtr: TButton
+        Left = 584
+        Height = 25
+        Top = 40
+        Width = 136
+        Caption = 'XMVectorGetYPtr'
+        OnClick = btnXMVectorGetYPtrClick
+        TabOrder = 25
+      end
+      object btnXMVectorGetZPtr: TButton
+        Left = 584
+        Height = 25
+        Top = 72
+        Width = 136
+        Caption = 'XMVectorGetZPtr'
+        OnClick = btnXMVectorGetZPtrClick
+        TabOrder = 26
+      end
+      object btnXMVectorGetWPtr: TButton
+        Left = 584
+        Height = 25
+        Top = 104
+        Width = 136
+        Caption = 'XMVectorGetWPtr'
+        OnClick = btnXMVectorGetWPtrClick
+        TabOrder = 27
+      end
+      object btnXMVectorGetIntByIndex: TButton
+        Left = 584
+        Height = 25
+        Top = 136
+        Width = 136
+        Caption = 'XMVectorGetIntByIndex'
+        OnClick = btnXMVectorGetIntByIndexClick
+        TabOrder = 28
+      end
+      object btnXMVectorGetIntX: TButton
+        Left = 584
+        Height = 25
+        Top = 168
+        Width = 136
+        Caption = 'XMVectorGetIntX'
+        OnClick = btnXMVectorGetIntXClick
+        TabOrder = 29
+      end
+      object btnXMVectorGetIntY: TButton
+        Left = 728
+        Height = 25
+        Top = 9
+        Width = 136
+        Caption = 'XMVectorGetIntY'
+        OnClick = btnXMVectorGetIntYClick
+        TabOrder = 30
+      end
+      object btnXMVectorGetIntZ: TButton
+        Left = 728
+        Height = 25
+        Top = 41
+        Width = 136
+        Caption = 'XMVectorGetIntZ'
+        OnClick = btnXMVectorGetIntZClick
+        TabOrder = 31
+      end
+      object btnXMVectorGetIntW: TButton
+        Left = 728
+        Height = 25
+        Top = 73
+        Width = 136
+        Caption = 'XMVectorGetIntW'
+        OnClick = btnXMVectorGetIntWClick
+        TabOrder = 32
+      end
+      object btnXMVectorGetIntByIndexPtr: TButton
+        Left = 728
+        Height = 25
+        Top = 105
+        Width = 136
+        Caption = 'XMVectorGetIntByIndexPtr'
+        OnClick = btnXMVectorGetIntByIndexPtrClick
+        TabOrder = 33
+      end
+      object btnXMVectorGetIntXPtr: TButton
+        Left = 728
+        Height = 25
+        Top = 137
+        Width = 136
+        Caption = 'XMVectorGetIntXPtr'
+        OnClick = btnXMVectorGetIntXPtrClick
+        TabOrder = 34
+      end
+      object btnXMVectorGetIntYPtr: TButton
+        Left = 728
+        Height = 25
+        Top = 168
+        Width = 136
+        Caption = 'XMVectorGetIntYPtr'
+        OnClick = btnXMVectorGetIntYPtrClick
+        TabOrder = 35
+      end
+      object btnXMVectorGetIntZPtr: TButton
+        Left = 872
+        Height = 25
+        Top = 9
+        Width = 136
+        Caption = 'XMVectorGetIntZPtr'
+        OnClick = btnXMVectorGetIntZPtrClick
+        TabOrder = 36
+      end
+      object btnXMVectorGetIntWPtr: TButton
+        Left = 872
+        Height = 25
+        Top = 41
+        Width = 136
+        Caption = 'XMVectorGetIntWPtr'
+        OnClick = btnXMVectorGetIntWPtrClick
+        TabOrder = 37
+      end
+      object btnXMVectorSetByIndex: TButton
+        Left = 872
+        Height = 25
+        Top = 73
+        Width = 136
+        Caption = 'XMVectorSetByIndex'
+        OnClick = btnXMVectorSetByIndexClick
+        TabOrder = 38
+      end
+      object btnXMVectorSetX: TButton
+        Left = 872
+        Height = 25
+        Top = 105
+        Width = 136
+        Caption = 'XMVectorSetX'
+        TabOrder = 39
+      end
+      object btnXMVectorSetY: TButton
+        Left = 872
+        Height = 25
+        Top = 137
+        Width = 136
+        Caption = 'XMVectorSetY'
+        TabOrder = 40
+      end
+      object btnXMVectorSetZ: TButton
+        Left = 872
+        Height = 25
+        Top = 168
+        Width = 136
+        Caption = 'XMVectorSetZ'
+        TabOrder = 41
+      end
+      object btnXMVectorSetW: TButton
+        Left = 1016
+        Height = 25
+        Top = 9
+        Width = 136
+        Caption = 'XMVectorSetW'
+        TabOrder = 42
+      end
+      object btnXMVectorSetByIndexPtr: TButton
+        Left = 1016
+        Height = 25
+        Top = 41
+        Width = 136
+        Caption = 'XMVectorSetByIndexPtr'
+        OnClick = btnXMVectorSetByIndexPtrClick
+        TabOrder = 43
+      end
+      object btnXMVectorSetXPtr: TButton
+        Left = 1016
+        Height = 25
+        Top = 73
+        Width = 136
+        Caption = 'XMVectorSetXPtr'
+        TabOrder = 44
+      end
+      object btnXMVectorSetYPtr: TButton
+        Left = 1016
+        Height = 25
+        Top = 105
+        Width = 136
+        Caption = 'XMVectorSetYPtr'
+        TabOrder = 45
+      end
+      object btnXMVectorSetZPtr: TButton
+        Left = 1016
+        Height = 25
+        Top = 137
+        Width = 136
+        Caption = 'XMVectorSetZPtr'
+        TabOrder = 46
+      end
+      object btnXMVectorSetWPtr: TButton
+        Left = 1016
+        Height = 25
+        Top = 168
+        Width = 136
+        Caption = 'XMVectorSetWPtr'
+        TabOrder = 47
+      end
+      object btnXMVectorSetIntByIndex: TButton
+        Left = 1160
+        Height = 25
+        Top = 8
+        Width = 136
+        Caption = 'XMVectorSetIntByIndex'
+        TabOrder = 48
+      end
+      object btnXMVectorSetIntX: TButton
+        Left = 1160
+        Height = 25
+        Top = 40
+        Width = 136
+        Caption = 'XMVectorSetIntX'
+        TabOrder = 49
+      end
+      object btnXMVectorSetIntY: TButton
+        Left = 1160
+        Height = 25
+        Top = 72
+        Width = 136
+        Caption = 'XMVectorSetIntY'
+        TabOrder = 50
+      end
+      object btnXMVectorSetIntZ: TButton
+        Left = 1160
+        Height = 25
+        Top = 104
+        Width = 136
+        Caption = 'XMVectorSetIntZ'
+        TabOrder = 51
+      end
+      object btnXMVectorSetIntW: TButton
+        Left = 1160
+        Height = 25
+        Top = 136
+        Width = 136
+        Caption = 'XMVectorSetIntW'
+        TabOrder = 52
+      end
+      object btnXMVectorSetIntByIndexPtr: TButton
+        Left = 1160
+        Height = 25
+        Top = 167
+        Width = 136
+        Caption = 'XMVectorSetIntByIndexPtr'
+        TabOrder = 53
+      end
+      object btnXMVectorSetIntXPtr: TButton
+        Left = 1304
+        Height = 25
+        Top = 8
+        Width = 136
+        Caption = 'XMVectorSetIntXPtr'
+        TabOrder = 54
+      end
+      object btnXMVectorSetIntYPtr: TButton
+        Left = 1304
+        Height = 25
+        Top = 40
+        Width = 136
+        Caption = 'XMVectorSetIntYPtr'
+        TabOrder = 55
+      end
+      object btnXMVectorSetIntZPtr: TButton
+        Left = 1304
+        Height = 25
+        Top = 72
+        Width = 136
+        Caption = 'XMVectorSetIntZPtr'
+        TabOrder = 56
+      end
+      object btnXMVectorSetIntWPtr: TButton
+        Left = 1304
+        Height = 25
+        Top = 104
+        Width = 136
+        Caption = 'XMVectorSetIntWPtr'
+        TabOrder = 57
+      end
+      object btnXMVectorSwizzle: TButton
+        Left = 1304
+        Height = 25
+        Top = 136
+        Width = 136
+        Caption = 'XMVectorSwizzle'
+        TabOrder = 58
+      end
+      object btnXMVectorPermute: TButton
+        Left = 1304
+        Height = 25
+        Top = 167
+        Width = 136
+        Caption = 'XMVectorPermute'
+        TabOrder = 59
+      end
+    end
+    object TabSheet6: TTabSheet
+      Caption = 'General vector operations 2'
+      ClientHeight = 220
+      ClientWidth = 1454
+      OnContextPopup = TabSheet6ContextPopup
+      object btnXMVectorSelectControl: TButton
         Left = 8
         Height = 25
-        Top = 56
+        Top = 8
+        Width = 144
+        Caption = 'XMVectorSelectControl'
+        TabOrder = 0
+      end
+      object btnXMVectorSelect: TButton
+        Left = 8
+        Height = 25
+        Top = 36
+        Width = 144
+        Caption = 'XMVectorSelect'
+        TabOrder = 1
+      end
+      object btnXMVectorMergeXY: TButton
+        Left = 8
+        Height = 25
+        Top = 64
+        Width = 144
+        Caption = 'XMVectorMergeXY'
+        TabOrder = 2
+      end
+      object btnXMVectorMergeZW: TButton
+        Left = 8
+        Height = 25
+        Top = 92
+        Width = 144
+        Caption = 'XMVectorMergeZW'
+        TabOrder = 3
+      end
+      object btnXMVectorShiftLeft: TButton
+        Left = 8
+        Height = 25
+        Top = 120
+        Width = 144
+        Caption = 'XMVectorShiftLeft'
+        TabOrder = 4
+      end
+      object btnXMVectorRotateLeft: TButton
+        Left = 8
+        Height = 25
+        Top = 148
+        Width = 144
+        Caption = 'XMVectorRotateLeft'
+        TabOrder = 5
+      end
+      object btnXMVectorRotateRight: TButton
+        Left = 8
+        Height = 25
+        Top = 176
+        Width = 144
+        Caption = 'XMVectorRotateRight'
+        TabOrder = 6
+      end
+      object btnXMVectorEqual: TButton
+        Left = 160
+        Height = 25
+        Top = 36
+        Width = 144
+        Caption = 'XMVectorEqual'
+        TabOrder = 7
+      end
+      object btnXMVectorInsert: TButton
+        Left = 160
+        Height = 25
+        Top = 8
+        Width = 144
+        Caption = 'XMVectorInsert'
+        TabOrder = 8
+      end
+      object btnXMVectorEqualR: TButton
+        Left = 160
+        Height = 25
+        Top = 64
+        Width = 144
+        Caption = 'XMVectorEqualR'
+        TabOrder = 9
+      end
+      object btnXMVectorEqualInt: TButton
+        Left = 160
+        Height = 25
+        Top = 92
+        Width = 144
+        Caption = 'XMVectorEqualInt'
+        TabOrder = 10
+      end
+      object btnXMVectorEqualIntR: TButton
+        Left = 160
+        Height = 25
+        Top = 120
+        Width = 144
+        Caption = 'XMVectorEqualIntR'
+        TabOrder = 11
+      end
+      object btnXMVectorNearEqual: TButton
+        Left = 160
+        Height = 25
+        Top = 148
+        Width = 144
+        Caption = 'XMVectorNearEqual'
+        TabOrder = 12
+      end
+      object btnXMVectorNotEqual: TButton
+        Left = 160
+        Height = 25
+        Top = 176
+        Width = 144
+        Caption = 'XMVectorNotEqual'
+        TabOrder = 13
+      end
+      object btnXMVectorGreater: TButton
+        Left = 312
+        Height = 25
+        Top = 36
+        Width = 144
+        Caption = 'XMVectorGreater'
+        TabOrder = 14
+      end
+      object btnXMVectorNotEqualInt: TButton
+        Left = 312
+        Height = 25
+        Top = 8
+        Width = 144
+        Caption = 'XMVectorNotEqualInt'
+        TabOrder = 15
+      end
+      object btnXMVectorGreaterR: TButton
+        Left = 312
+        Height = 25
+        Top = 64
+        Width = 144
+        Caption = 'XMVectorGreaterR'
+        TabOrder = 16
+      end
+      object btnXMVectorGreaterOrEqual: TButton
+        Left = 312
+        Height = 25
+        Top = 92
+        Width = 144
+        Caption = 'XMVectorGreaterOrEqual'
+        TabOrder = 17
+      end
+      object btnXMVectorGreaterOrEqualR: TButton
+        Left = 312
+        Height = 25
+        Top = 120
+        Width = 144
+        Caption = 'XMVectorGreaterOrEqualR'
+        TabOrder = 18
+      end
+      object btnXMVectorLess: TButton
+        Left = 312
+        Height = 25
+        Top = 148
+        Width = 144
+        Caption = 'XMVectorLess'
+        TabOrder = 19
+      end
+      object btnXMVectorLessOrEqual: TButton
+        Left = 312
+        Height = 25
+        Top = 176
+        Width = 144
+        Caption = 'XMVectorLessOrEqual'
+        TabOrder = 20
+      end
+      object btnXMVectorInBoundsR: TButton
+        Left = 464
+        Height = 25
+        Top = 36
+        Width = 144
+        Caption = 'XMVectorInBoundsR'
+        TabOrder = 21
+      end
+      object btnXMVectorInBounds: TButton
+        Left = 464
+        Height = 25
+        Top = 8
+        Width = 144
+        Caption = 'XMVectorInBounds'
+        TabOrder = 22
+      end
+      object btnXMVectorIsNaN: TButton
+        Left = 464
+        Height = 25
+        Top = 64
+        Width = 144
+        Caption = 'XMVectorIsNaN'
+        TabOrder = 23
+      end
+      object btnXMVectorIsInfinite: TButton
+        Left = 464
+        Height = 25
+        Top = 92
+        Width = 144
+        Caption = 'XMVectorIsInfinite'
+        TabOrder = 24
+      end
+      object btnXMVectorMin: TButton
+        Left = 464
+        Height = 25
+        Top = 120
+        Width = 144
+        Caption = 'XMVectorMin'
+        TabOrder = 25
+      end
+      object btnXMVectorMax: TButton
+        Left = 464
+        Height = 25
+        Top = 148
+        Width = 144
+        Caption = 'XMVectorMax'
+        TabOrder = 26
+      end
+      object btnXMVectorRound: TButton
+        Left = 464
+        Height = 25
+        Top = 176
+        Width = 144
+        Caption = 'XMVectorRound'
+        TabOrder = 27
+      end
+      object btnXMVectorFloor: TButton
+        Left = 616
+        Height = 25
+        Top = 36
+        Width = 144
+        Caption = 'XMVectorFloor'
+        TabOrder = 28
+      end
+      object btnXMVectorTruncate: TButton
+        Left = 616
+        Height = 25
+        Top = 8
+        Width = 144
+        Caption = 'XMVectorTruncate'
+        TabOrder = 29
+      end
+      object btnXMVectorCeiling: TButton
+        Left = 616
+        Height = 25
+        Top = 64
+        Width = 144
+        Caption = 'XMVectorCeiling'
+        TabOrder = 30
+      end
+      object btnXMVectorClamp: TButton
+        Left = 616
+        Height = 25
+        Top = 92
+        Width = 144
+        Caption = 'XMVectorClamp'
+        TabOrder = 31
+      end
+      object btnXMVectorSaturate: TButton
+        Left = 616
+        Height = 25
+        Top = 120
+        Width = 144
+        Caption = 'XMVectorSaturate'
+        TabOrder = 32
+      end
+      object btnXMVectorAndInt: TButton
+        Left = 616
+        Height = 25
+        Top = 148
+        Width = 144
+        Caption = 'XMVectorAndInt'
+        TabOrder = 33
+      end
+      object btnXMVectorAndCInt: TButton
+        Left = 616
+        Height = 25
+        Top = 176
+        Width = 144
+        Caption = 'XMVectorAndCInt'
+        TabOrder = 34
+      end
+      object btnXMVectorNorInt: TButton
+        Left = 768
+        Height = 25
+        Top = 36
+        Width = 144
+        Caption = 'XMVectorNorInt'
+        TabOrder = 35
+      end
+      object btnXMVectorOrInt: TButton
+        Left = 768
+        Height = 25
+        Top = 8
+        Width = 144
+        Caption = 'XMVectorOrInt'
+        TabOrder = 36
+      end
+      object btnXMVectorXorInt: TButton
+        Left = 768
+        Height = 25
+        Top = 64
+        Width = 144
+        Caption = 'XMVectorXorInt'
+        TabOrder = 37
+      end
+      object btnXMVectorNegate: TButton
+        Left = 768
+        Height = 25
+        Top = 92
+        Width = 144
+        Caption = 'XMVectorNegate'
+        TabOrder = 38
+      end
+      object btnXMVectorAdd: TButton
+        Left = 768
+        Height = 25
+        Top = 120
+        Width = 144
+        Caption = 'XMVectorAdd'
+        TabOrder = 39
+      end
+      object btnXMVectorSum: TButton
+        Left = 768
+        Height = 25
+        Top = 148
+        Width = 144
+        Caption = 'XMVectorSum'
+        TabOrder = 40
+      end
+      object btnXMVectorAddAngles: TButton
+        Left = 768
+        Height = 25
+        Top = 176
+        Width = 144
+        Caption = 'XMVectorAddAngles'
+        TabOrder = 41
+      end
+      object btnXMVectorSubtractAngles: TButton
+        Left = 920
+        Height = 25
+        Top = 36
+        Width = 144
+        Caption = 'XMVectorSubtractAngles'
+        TabOrder = 42
+      end
+      object btnXMVectorSubtract: TButton
+        Left = 920
+        Height = 25
+        Top = 8
+        Width = 144
+        Caption = 'XMVectorSubtract'
+        TabOrder = 43
+      end
+      object btnXMVectorMultiply: TButton
+        Left = 920
+        Height = 25
+        Top = 64
+        Width = 144
+        Caption = 'XMVectorMultiply'
+        TabOrder = 44
+      end
+      object btnXMVectorMultiplyAdd: TButton
+        Left = 920
+        Height = 25
+        Top = 92
+        Width = 144
+        Caption = 'XMVectorMultiplyAdd'
+        TabOrder = 45
+      end
+      object btnXMVectorDivide: TButton
+        Left = 920
+        Height = 25
+        Top = 120
+        Width = 144
+        Caption = 'XMVectorDivide'
+        TabOrder = 46
+      end
+      object btnXMVectorNegativeMultiplySubtract: TButton
+        Left = 1224
+        Height = 25
+        Top = 176
+        Width = 200
+        Caption = 'XMVectorNegativeMultiplySubtract'
+        TabOrder = 47
+      end
+      object btnXMVectorScale: TButton
+        Left = 920
+        Height = 25
+        Top = 176
+        Width = 144
+        Caption = 'XMVectorScale'
+        TabOrder = 48
+      end
+      object btnXMVectorReciprocal: TButton
+        Left = 1072
+        Height = 25
+        Top = 36
+        Width = 144
+        Caption = 'XMVectorReciprocal'
+        TabOrder = 49
+      end
+      object btnXMVectorReciprocalEst: TButton
+        Left = 1072
+        Height = 25
+        Top = 8
+        Width = 144
+        Caption = 'XMVectorReciprocalEst'
+        TabOrder = 50
+      end
+      object btnXMVectorSqrtEst: TButton
+        Left = 1072
+        Height = 25
+        Top = 64
+        Width = 144
+        Caption = 'XMVectorSqrtEst'
+        TabOrder = 51
+      end
+      object btnXMVectorSqrt: TButton
+        Left = 1072
+        Height = 25
+        Top = 92
+        Width = 144
+        Caption = 'XMVectorSqrt'
+        TabOrder = 52
+      end
+      object btnXMVectorReciprocalSqrtEst: TButton
+        Left = 1224
+        Height = 25
+        Top = 120
+        Width = 200
+        Caption = 'XMVectorReciprocalSqrtEst'
+        TabOrder = 53
+      end
+      object btnXMVectorReciprocalSqrt: TButton
+        Left = 1072
+        Height = 25
+        Top = 148
+        Width = 144
+        Caption = 'XMVectorReciprocalSqrt'
+        TabOrder = 54
+      end
+      object btnXMVectorExp2: TButton
+        Left = 1072
+        Height = 25
+        Top = 176
+        Width = 144
+        Caption = 'XMVectorExp2'
+        TabOrder = 55
+      end
+      object btnXMVectorLogE: TButton
+        Left = 1224
+        Height = 25
+        Top = 36
+        Width = 200
+        Caption = 'XMVectorLogE'
+        TabOrder = 56
+      end
+      object btnXMVectorExpE: TButton
+        Left = 1224
+        Height = 25
+        Top = 8
+        Width = 200
+        Caption = 'XMVectorExpE'
+        TabOrder = 57
+      end
+      object btnXMVectorLog: TButton
+        Left = 1224
+        Height = 25
+        Top = 64
+        Width = 200
+        Caption = 'XMVectorLog'
+        TabOrder = 58
+      end
+      object btnXMVectorPow: TButton
+        Left = 1224
+        Height = 25
+        Top = 92
+        Width = 200
+        Caption = 'XMVectorPow'
+        TabOrder = 59
+      end
+      object btnXMVectorLog2: TButton
+        Left = 1072
+        Height = 25
+        Top = 120
+        Width = 144
+        Caption = 'XMVectorLog2'
+        TabOrder = 60
+      end
+      object btnXMVectorAbs: TButton
+        Left = 1224
+        Height = 25
+        Top = 148
+        Width = 200
+        Caption = 'XMVectorAbs'
+        TabOrder = 61
+      end
+      object btnXMVectorExp: TButton
+        Left = 920
+        Height = 25
+        Top = 148
+        Width = 144
+        Caption = 'XMVectorExp'
+        TabOrder = 62
+      end
+    end
+    object TabSheet7: TTabSheet
+      Caption = 'General vector operations 3'
+      ClientHeight = 220
+      ClientWidth = 1454
+      OnContextPopup = TabSheet7ContextPopup
+      object btnXMVectorMod: TButton
+        Left = 8
+        Height = 25
+        Top = 8
+        Width = 152
+        Caption = 'XMVectorMod'
+        TabOrder = 0
+      end
+      object btnXMVectorModAngles: TButton
+        Left = 8
+        Height = 25
+        Top = 36
+        Width = 152
+        Caption = 'XMVectorModAngles'
+        TabOrder = 1
+      end
+      object btnXMVectorSin: TButton
+        Left = 8
+        Height = 25
+        Top = 64
+        Width = 152
+        Caption = 'XMVectorSin'
+        TabOrder = 2
+      end
+      object btnXMVectorSinEst: TButton
+        Left = 8
+        Height = 25
+        Top = 92
+        Width = 152
+        Caption = 'XMVectorSinEst'
+        TabOrder = 3
+      end
+      object btnXMVectorCos: TButton
+        Left = 8
+        Height = 25
+        Top = 120
+        Width = 152
+        Caption = 'XMVectorCos'
+        TabOrder = 4
+      end
+      object btnXMVectorCosEst: TButton
+        Left = 8
+        Height = 25
+        Top = 148
+        Width = 152
+        Caption = 'XMVectorCosEst'
+        TabOrder = 5
+      end
+      object btnXMVectorSinCos: TButton
+        Left = 8
+        Height = 25
+        Top = 176
+        Width = 152
+        Caption = 'XMVectorSinCos'
+        TabOrder = 6
+      end
+      object btnXMVectorSinCosEst: TButton
+        Left = 168
+        Height = 25
+        Top = 8
+        Width = 152
+        Caption = 'XMVectorSinCosEst'
+        TabOrder = 7
+      end
+      object btnXMVectorTan: TButton
+        Left = 168
+        Height = 25
+        Top = 36
+        Width = 152
+        Caption = 'XMVectorTan'
+        TabOrder = 8
+      end
+      object btnXMVectorTanEst: TButton
+        Left = 168
+        Height = 25
+        Top = 64
+        Width = 152
+        Caption = 'XMVectorTanEst'
+        OnClick = btnXMVectorTanEstClick
+        TabOrder = 9
+      end
+      object btnXMVectorSinH: TButton
+        Left = 168
+        Height = 25
+        Top = 92
+        Width = 152
+        Caption = 'XMVectorSinH'
+        TabOrder = 10
+      end
+      object btnXMVectorCosH: TButton
+        Left = 168
+        Height = 25
+        Top = 120
+        Width = 152
+        Caption = 'XMVectorCosH'
+        TabOrder = 11
+      end
+      object btnXMVectorTanH: TButton
+        Left = 168
+        Height = 25
+        Top = 148
+        Width = 152
+        Caption = 'XMVectorTanH'
+        TabOrder = 12
+      end
+      object btnXMVectorASin: TButton
+        Left = 168
+        Height = 25
+        Top = 176
+        Width = 152
+        Caption = 'XMVectorASin'
+        TabOrder = 13
+      end
+      object btnXMVectorASinEst: TButton
+        Left = 328
+        Height = 25
+        Top = 8
+        Width = 152
+        Caption = 'XMVectorASinEst'
+        TabOrder = 14
+      end
+      object btnXMVectorACos: TButton
+        Left = 328
+        Height = 25
+        Top = 36
+        Width = 152
+        Caption = 'XMVectorACos'
+        TabOrder = 15
+      end
+      object btnXMVectorACosEst: TButton
+        Left = 328
+        Height = 25
+        Top = 64
+        Width = 152
+        Caption = 'XMVectorACosEst'
+        OnClick = btnXMVectorTanEstClick
+        TabOrder = 16
+      end
+      object btnXMVectorATan: TButton
+        Left = 328
+        Height = 25
+        Top = 92
+        Width = 152
+        Caption = 'XMVectorATan'
+        TabOrder = 17
+      end
+      object btnXMVectorATanEst: TButton
+        Left = 328
+        Height = 25
+        Top = 120
+        Width = 152
+        Caption = 'XMVectorATanEst'
+        TabOrder = 18
+      end
+      object btnXMVectorATan2: TButton
+        Left = 328
+        Height = 25
+        Top = 148
+        Width = 152
+        Caption = 'XMVectorATan2'
+        TabOrder = 19
+      end
+      object btnXMVectorATan2Est: TButton
+        Left = 328
+        Height = 25
+        Top = 176
+        Width = 152
+        Caption = 'XMVectorATan2Est'
+        TabOrder = 20
+      end
+      object btnXMVectorLerp: TButton
+        Left = 488
+        Height = 25
+        Top = 8
+        Width = 152
+        Caption = 'XMVectorLerp'
+        TabOrder = 21
+      end
+      object btnXMVectorLerpV: TButton
+        Left = 488
+        Height = 25
+        Top = 36
+        Width = 152
+        Caption = 'XMVectorLerpV'
+        TabOrder = 22
+      end
+      object btnXMVectorHermite: TButton
+        Left = 488
+        Height = 25
+        Top = 64
+        Width = 152
+        Caption = 'XMVectorHermite'
+        OnClick = btnXMVectorTanEstClick
+        TabOrder = 23
+      end
+      object btnXMVectorHermiteV: TButton
+        Left = 488
+        Height = 25
+        Top = 92
+        Width = 152
+        Caption = 'XMVectorHermiteV'
+        TabOrder = 24
+      end
+      object btnXMVectorCatmullRom: TButton
+        Left = 488
+        Height = 25
+        Top = 120
+        Width = 152
+        Caption = 'XMVectorCatmullRom'
+        TabOrder = 25
+      end
+      object btnXMVectorCatmullRomV: TButton
+        Left = 488
+        Height = 25
+        Top = 148
+        Width = 152
+        Caption = 'XMVectorCatmullRomV'
+        TabOrder = 26
+      end
+      object btnXMVectorBaryCentric: TButton
+        Left = 488
+        Height = 25
+        Top = 176
+        Width = 152
+        Caption = 'XMVectorBaryCentric'
+        TabOrder = 27
+      end
+      object btnXMVectorBaryCentricV: TButton
+        Left = 648
+        Height = 25
+        Top = 8
+        Width = 152
+        Caption = 'XMVectorBaryCentricV'
+        TabOrder = 28
+      end
+    end
+    object TabSheet8: TTabSheet
+      Caption = 'XMVector2'
+      ClientHeight = 220
+      ClientWidth = 1454
+      object btnXMVector2Equal: TButton
+        Left = 8
+        Height = 25
+        Top = 8
+        Width = 176
+        Caption = 'XMVector2Equal'
+        OnClick = btnXMVector2EqualClick
+        TabOrder = 0
+      end
+      object btnXMVector2EqualR: TButton
+        Left = 8
+        Height = 25
+        Top = 36
+        Width = 176
+        Caption = 'XMVector2EqualR'
+        TabOrder = 1
+      end
+      object btnXMVector2EqualInt: TButton
+        Left = 8
+        Height = 25
+        Top = 64
+        Width = 176
+        Caption = 'XMVector2EqualInt'
+        TabOrder = 2
+      end
+      object btnXMVector2EqualIntR: TButton
+        Left = 8
+        Height = 25
+        Top = 92
+        Width = 176
+        Caption = 'XMVector2EqualIntR'
+        TabOrder = 3
+      end
+      object btnXMVector2NearEqual: TButton
+        Left = 8
+        Height = 25
+        Top = 120
+        Width = 176
+        Caption = 'XMVector2NearEqual'
+        TabOrder = 4
+      end
+      object btnXMVector2NotEqual: TButton
+        Left = 8
+        Height = 25
+        Top = 148
+        Width = 176
+        Caption = 'XMVector2NotEqual'
+        TabOrder = 5
+      end
+      object btnXMVector2NotEqualInt: TButton
+        Left = 8
+        Height = 25
+        Top = 176
+        Width = 176
+        Caption = 'XMVector2NotEqualInt'
+        TabOrder = 6
+      end
+      object btnXMVector2GreaterR: TButton
+        Left = 192
+        Height = 25
+        Top = 36
+        Width = 176
+        Caption = 'XMVector2GreaterR'
+        TabOrder = 7
+      end
+      object btnXMVector2GreaterOrEqual: TButton
+        Left = 192
+        Height = 25
+        Top = 64
+        Width = 176
+        Caption = 'XMVector2GreaterOrEqual'
+        TabOrder = 8
+      end
+      object btnXMVector2GreaterOrEqualR: TButton
+        Left = 192
+        Height = 25
+        Top = 92
+        Width = 176
+        Caption = 'XMVector2GreaterOrEqualR'
+        TabOrder = 9
+      end
+      object btnXMVector2Less: TButton
+        Left = 192
+        Height = 25
+        Top = 120
+        Width = 176
+        Caption = 'XMVector2Less'
+        TabOrder = 10
+      end
+      object btnXMVector2LessOrEqual: TButton
+        Left = 192
+        Height = 25
+        Top = 148
+        Width = 176
+        Caption = 'XMVector2LessOrEqual'
+        TabOrder = 11
+      end
+      object btnXMVector2InBounds: TButton
+        Left = 192
+        Height = 25
+        Top = 176
+        Width = 176
+        Caption = 'XMVector2InBounds'
+        TabOrder = 12
+      end
+      object btnXMVector2Greater: TButton
+        Left = 192
+        Height = 25
+        Top = 8
+        Width = 176
+        Caption = 'XMVector2Greater'
+        TabOrder = 13
+      end
+      object btnXMVector2IsNaN: TButton
+        Left = 376
+        Height = 25
+        Top = 8
+        Width = 176
+        Caption = 'XMVector2IsNaN'
+        TabOrder = 14
+      end
+      object btnXMVector2IsInfinite: TButton
+        Left = 376
+        Height = 25
+        Top = 36
+        Width = 176
+        Caption = 'XMVector2IsInfinite'
+        TabOrder = 15
+      end
+      object btnXMVector2Dot: TButton
+        Left = 376
+        Height = 25
+        Top = 64
+        Width = 176
+        Caption = 'XMVector2Dot'
+        TabOrder = 16
+      end
+      object btnXMVector2Cross: TButton
+        Left = 376
+        Height = 25
+        Top = 92
+        Width = 176
+        Caption = 'XMVector2Cross'
+        TabOrder = 17
+      end
+      object btnXMVector2LengthSq: TButton
+        Left = 376
+        Height = 25
+        Top = 120
+        Width = 176
+        Caption = 'XMVector2LengthSq'
+        TabOrder = 18
+      end
+      object btnXMVector2ReciprocalLengthEst: TButton
+        Left = 376
+        Height = 25
+        Top = 148
+        Width = 176
+        Caption = 'XMVector2ReciprocalLengthEst'
+        TabOrder = 19
+      end
+      object btnXMVector2ReciprocalLength: TButton
+        Left = 376
+        Height = 25
+        Top = 176
+        Width = 176
+        Caption = 'XMVector2ReciprocalLength'
+        TabOrder = 20
+      end
+      object btnXMVector2LengthEst: TButton
+        Left = 560
+        Height = 25
+        Top = 8
+        Width = 176
+        Caption = 'XMVector2LengthEst'
+        TabOrder = 21
+      end
+      object btnXMVector2Length: TButton
+        Left = 560
+        Height = 25
+        Top = 36
+        Width = 176
+        Caption = 'XMVector2Length'
+        TabOrder = 22
+      end
+      object btnXMVector2NormalizeEst: TButton
+        Left = 560
+        Height = 25
+        Top = 64
+        Width = 176
+        Caption = 'XMVector2NormalizeEst'
+        TabOrder = 23
+      end
+      object btnXMVector2Normalize: TButton
+        Left = 560
+        Height = 25
+        Top = 92
+        Width = 176
+        Caption = 'XMVector2Normalize'
+        TabOrder = 24
+      end
+      object btnXMVector2ClampLength: TButton
+        Left = 560
+        Height = 25
+        Top = 120
+        Width = 176
+        Caption = 'XMVector2ClampLength'
+        TabOrder = 25
+      end
+      object btnXMVector2ClampLengthV: TButton
+        Left = 560
+        Height = 25
+        Top = 148
+        Width = 176
+        Caption = 'XMVector2ClampLengthV'
+        TabOrder = 26
+      end
+      object btnXMVector2Reflect: TButton
+        Left = 560
+        Height = 25
+        Top = 176
+        Width = 176
+        Caption = 'XMVector2Reflect'
+        TabOrder = 27
+      end
+      object btnXMVector2Refract: TButton
+        Left = 744
+        Height = 25
+        Top = 8
+        Width = 176
+        Caption = 'XMVector2Refract'
+        TabOrder = 28
+      end
+      object btnXMVector2RefractV: TButton
+        Left = 744
+        Height = 25
+        Top = 36
+        Width = 176
+        Caption = 'XMVector2RefractV'
+        TabOrder = 29
+      end
+      object btnXMVector2Orthogonal: TButton
+        Left = 744
+        Height = 25
+        Top = 64
+        Width = 176
+        Caption = 'XMVector2Orthogonal'
+        TabOrder = 30
+      end
+      object btnXMVector2Transform: TButton
+        Left = 744
+        Height = 25
+        Top = 92
+        Width = 176
+        Caption = 'XMVector2Transform'
+        TabOrder = 31
+      end
+      object btnXMVector2TransformStream: TButton
+        Left = 744
+        Height = 25
+        Top = 120
+        Width = 176
+        Caption = 'XMVector2TransformStream'
+        TabOrder = 32
+      end
+      object btnXMVector2TransformCoord: TButton
+        Left = 744
+        Height = 25
+        Top = 148
+        Width = 176
+        Caption = 'XMVector2TransformCoord'
+        TabOrder = 33
+      end
+      object btnXMVector2TransformNormal: TButton
+        Left = 744
+        Height = 25
+        Top = 176
+        Width = 176
+        Caption = 'XMVector2TransformNormal'
+        TabOrder = 34
+      end
+      object btnXMVector2AngleBetweenNormalsEst: TButton
+        Left = 1112
+        Height = 25
+        Top = 8
+        Width = 240
+        Caption = 'XMVector2AngleBetweenNormalsEst'
+        TabOrder = 35
+      end
+      object btnXMVector2AngleBetweenNormals: TButton
+        Left = 1112
+        Height = 25
+        Top = 36
+        Width = 240
+        Caption = 'XMVector2AngleBetweenNormals'
+        TabOrder = 36
+      end
+      object btnXMVector2AngleBetweenVectors: TButton
+        Left = 1112
+        Height = 25
+        Top = 64
+        Width = 240
+        Caption = 'XMVector2AngleBetweenVectors'
+        TabOrder = 37
+      end
+      object btnXMVector2LinePointDistance: TButton
+        Left = 1112
+        Height = 25
+        Top = 92
+        Width = 240
+        Caption = 'XMVector2LinePointDistance'
+        TabOrder = 38
+      end
+      object btnXMVector2IntersectLine: TButton
+        Left = 1112
+        Height = 25
+        Top = 120
+        Width = 240
+        Caption = 'XMVector2IntersectLine'
+        TabOrder = 39
+      end
+      object btnXMVector2TransformCoordStream: TButton
+        Left = 1112
+        Height = 25
+        Top = 148
+        Width = 240
+        Caption = 'XMVector2TransformCoordStream'
+        TabOrder = 40
+      end
+      object btnXMVector2TransformNormalStream: TButton
+        Left = 1112
+        Height = 25
+        Top = 176
+        Width = 240
+        Caption = 'XMVector2TransformNormalStream'
+        TabOrder = 41
+      end
+    end
+    object TabSheet9: TTabSheet
+      Caption = 'XMVector3'
+      ClientHeight = 220
+      ClientWidth = 1454
+      object btnXMVector3Equal: TButton
+        Left = 8
+        Height = 25
+        Top = 8
+        Width = 176
+        Caption = 'XMVector3Equal'
+        OnClick = btnXMVector3EqualClick
+        TabOrder = 0
+      end
+      object btnXMVector3EqualR: TButton
+        Left = 8
+        Height = 25
+        Top = 36
+        Width = 176
+        Caption = 'XMVector3EqualR'
+        TabOrder = 1
+      end
+      object btnXMVector3EqualInt: TButton
+        Left = 8
+        Height = 25
+        Top = 64
+        Width = 176
+        Caption = 'XMVector3EqualInt'
+        TabOrder = 2
+      end
+      object btnXMVector3EqualIntR: TButton
+        Left = 8
+        Height = 25
+        Top = 92
+        Width = 176
+        Caption = 'XMVector3EqualIntR'
+        TabOrder = 3
+      end
+      object btnXMVector3NearEqual: TButton
+        Left = 8
+        Height = 25
+        Top = 120
+        Width = 176
+        Caption = 'XMVector3NearEqual'
+        TabOrder = 4
+      end
+      object btnXMVector3NotEqual: TButton
+        Left = 8
+        Height = 25
+        Top = 148
+        Width = 176
+        Caption = 'XMVector3NotEqual'
+        TabOrder = 5
+      end
+      object btnXMVector3NotEqualInt: TButton
+        Left = 8
+        Height = 25
+        Top = 176
+        Width = 176
+        Caption = 'XMVector3NotEqualInt'
+        TabOrder = 6
+      end
+      object btnXMVector3Greater: TButton
+        Left = 192
+        Height = 25
+        Top = 8
+        Width = 176
+        Caption = 'XMVector3Greater'
+        TabOrder = 7
+      end
+      object btnXMVector3GreaterR: TButton
+        Left = 192
+        Height = 25
+        Top = 36
+        Width = 176
+        Caption = 'XMVector3GreaterR'
+        TabOrder = 8
+      end
+      object btnXMVector3GreaterOrEqual: TButton
+        Left = 192
+        Height = 25
+        Top = 64
+        Width = 176
+        Caption = 'XMVector3GreaterOrEqual'
+        TabOrder = 9
+      end
+      object btnXMVector3GreaterOrEqualR: TButton
+        Left = 192
+        Height = 25
+        Top = 92
+        Width = 176
+        Caption = 'XMVector3GreaterOrEqualR'
+        TabOrder = 10
+      end
+      object btnXMVector3Less: TButton
+        Left = 192
+        Height = 25
+        Top = 120
+        Width = 176
+        Caption = 'XMVector3Less'
+        TabOrder = 11
+      end
+      object btnXMVector3LessOrEqual: TButton
+        Left = 192
+        Height = 25
+        Top = 148
+        Width = 176
+        Caption = 'XMVector3LessOrEqual'
+        TabOrder = 12
+      end
+      object btnXMVector3InBounds: TButton
+        Left = 192
+        Height = 25
+        Top = 176
+        Width = 176
+        Caption = 'XMVector3InBounds'
+        TabOrder = 13
+      end
+      object btnXMVector3IsNaN: TButton
+        Left = 376
+        Height = 25
+        Top = 8
+        Width = 176
+        Caption = 'XMVector3IsNaN'
+        TabOrder = 14
+      end
+      object btnXMVector3IsInfinite: TButton
+        Left = 376
+        Height = 25
+        Top = 36
+        Width = 176
+        Caption = 'XMVector3IsInfinite'
+        TabOrder = 15
+      end
+      object btnXMVector3Dot: TButton
+        Left = 376
+        Height = 25
+        Top = 64
+        Width = 176
+        Caption = 'XMVector3Dot'
+        TabOrder = 16
+      end
+      object btnXMVector3Cross: TButton
+        Left = 376
+        Height = 25
+        Top = 92
+        Width = 176
+        Caption = 'XMVector3Cross'
+        TabOrder = 17
+      end
+      object btnXMVector3LengthSq: TButton
+        Left = 376
+        Height = 25
+        Top = 120
+        Width = 176
+        Caption = 'XMVector3LengthSq'
+        TabOrder = 18
+      end
+      object btnXMVector3ReciprocalLengthEst: TButton
+        Left = 376
+        Height = 25
+        Top = 148
+        Width = 176
+        Caption = 'XMVector3ReciprocalLengthEst'
+        TabOrder = 19
+      end
+      object btnXMVector3ReciprocalLength: TButton
+        Left = 376
+        Height = 25
+        Top = 176
+        Width = 176
+        Caption = 'XMVector3ReciprocalLength'
+        TabOrder = 20
+      end
+      object btnXMVector3LengthEst: TButton
+        Left = 560
+        Height = 25
+        Top = 8
+        Width = 176
+        Caption = 'XMVector3LengthEst'
+        TabOrder = 21
+      end
+      object btnXMVector3Length: TButton
+        Left = 560
+        Height = 25
+        Top = 36
+        Width = 176
+        Caption = 'XMVector3Length'
+        TabOrder = 22
+      end
+      object btnXMVector3NormalizeEst: TButton
+        Left = 560
+        Height = 25
+        Top = 64
+        Width = 176
+        Caption = 'XMVector3NormalizeEst'
+        TabOrder = 23
+      end
+      object btnXMVector3Normalize: TButton
+        Left = 560
+        Height = 25
+        Top = 92
+        Width = 176
+        Caption = 'XMVector3Normalize'
+        TabOrder = 24
+      end
+      object btnXMVector3ClampLength: TButton
+        Left = 560
+        Height = 25
+        Top = 120
+        Width = 176
+        Caption = 'XMVector3ClampLength'
+        TabOrder = 25
+      end
+      object btnXMVector3ClampLengthV: TButton
+        Left = 560
+        Height = 25
+        Top = 148
+        Width = 176
+        Caption = 'XMVector3ClampLengthV'
+        TabOrder = 26
+      end
+      object btnXMVector3Reflect: TButton
+        Left = 560
+        Height = 25
+        Top = 176
+        Width = 176
+        Caption = 'XMVector3Reflect'
+        TabOrder = 27
+      end
+      object btnXMVector3Refract: TButton
+        Left = 744
+        Height = 25
+        Top = 8
+        Width = 176
+        Caption = 'XMVector3Refract'
+        TabOrder = 28
+      end
+      object btnXMVector3RefractV: TButton
+        Left = 744
+        Height = 25
+        Top = 36
+        Width = 176
+        Caption = 'XMVector3RefractV'
+        TabOrder = 29
+      end
+      object btnXMVector3Orthogonal: TButton
+        Left = 744
+        Height = 25
+        Top = 64
+        Width = 176
+        Caption = 'XMVector3Orthogonal'
+        TabOrder = 30
+      end
+      object btnXMVector3Rotate: TButton
+        Left = 744
+        Height = 25
+        Top = 92
+        Width = 176
+        Caption = 'XMVector3Rotate'
+        TabOrder = 31
+      end
+      object btnXMVector3InverseRotate: TButton
+        Left = 744
+        Height = 25
+        Top = 120
+        Width = 176
+        Caption = 'XMVector3InverseRotate'
+        TabOrder = 32
+      end
+      object btnXMVector3Transform: TButton
+        Left = 744
+        Height = 25
+        Top = 148
+        Width = 176
+        Caption = 'XMVector3Transform'
+        TabOrder = 33
+      end
+      object btnXMVector3TransformStream: TButton
+        Left = 928
+        Height = 25
+        Top = 8
+        Width = 176
+        Caption = 'XMVector3TransformStream'
+        TabOrder = 34
+      end
+      object btnXMVector3TransformCoord: TButton
+        Left = 928
+        Height = 25
+        Top = 36
+        Width = 176
+        Caption = 'XMVector3TransformCoord'
+        TabOrder = 35
+      end
+      object btnXMVector3TransformNormal: TButton
+        Left = 928
+        Height = 25
+        Top = 64
+        Width = 176
+        Caption = 'XMVector3TransformNormal'
+        TabOrder = 36
+      end
+      object btnXMVector3Project: TButton
+        Left = 928
+        Height = 25
+        Top = 92
+        Width = 176
+        Caption = 'XMVector3Project'
+        TabOrder = 37
+      end
+      object btnXMVector3ProjectStream: TButton
+        Left = 928
+        Height = 25
+        Top = 120
+        Width = 176
+        Caption = 'XMVector3ProjectStream'
+        TabOrder = 38
+      end
+      object btnXMVector3Unproject: TButton
+        Left = 928
+        Height = 25
+        Top = 148
+        Width = 176
+        Caption = 'XMVector3Unproject'
+        TabOrder = 39
+      end
+      object btnXMVector3UnprojectStream: TButton
+        Left = 928
+        Height = 25
+        Top = 176
+        Width = 176
+        Caption = 'XMVector3UnprojectStream'
+        TabOrder = 40
+      end
+      object btnXMVector3AngleBetweenNormalsEst: TButton
+        Left = 1112
+        Height = 25
+        Top = 8
+        Width = 240
+        Caption = 'XMVector3AngleBetweenNormalsEst'
+        TabOrder = 41
+      end
+      object btnXMVector3AngleBetweenNormals: TButton
+        Left = 1112
+        Height = 25
+        Top = 36
+        Width = 240
+        Caption = 'XMVector3AngleBetweenNormals'
+        TabOrder = 42
+      end
+      object btnXMVector3AngleBetweenVectors: TButton
+        Left = 1112
+        Height = 25
+        Top = 64
+        Width = 240
+        Caption = 'XMVector3AngleBetweenVectors'
+        TabOrder = 43
+      end
+      object btnXMVector3LinePointDistance: TButton
+        Left = 1112
+        Height = 25
+        Top = 92
+        Width = 240
+        Caption = 'XMVector3LinePointDistance'
+        TabOrder = 44
+      end
+      object btnXMVector3ComponentsFromNormal: TButton
+        Left = 1112
+        Height = 25
+        Top = 120
+        Width = 240
+        Caption = 'XMVector3ComponentsFromNormal'
+        TabOrder = 45
+      end
+      object btnXMVector3TransformCoordStream: TButton
+        Left = 1112
+        Height = 25
+        Top = 148
+        Width = 240
+        Caption = 'XMVector3TransformCoordStream'
+        TabOrder = 46
+      end
+      object btnXMVector3TransformNormalStream: TButton
+        Left = 1112
+        Height = 25
+        Top = 176
+        Width = 240
+        Caption = 'XMVector3TransformNormalStream'
+        TabOrder = 47
+      end
+    end
+    object TabSheet1: TTabSheet
+      Caption = 'XMVector4'
+      ClientHeight = 220
+      ClientWidth = 1454
+      object btnXMVector4GreaterOrEqual: TButton
+        Left = 192
+        Height = 25
+        Top = 184
         Width = 176
         Caption = 'XMVector4GreaterOrEqual'
         OnClick = btnXMVector4GreaterOrEqualClick
+        TabOrder = 0
+      end
+      object btnXMVector4Equal: TButton
+        Left = 8
+        Height = 25
+        Top = 88
+        Width = 176
+        Caption = 'XMVector4Equal'
+        OnClick = btnXMVector4EqualClick
         TabOrder = 1
+      end
+      object btnXMVector4EqualR: TButton
+        Left = 8
+        Height = 25
+        Top = 120
+        Width = 176
+        Caption = 'XMVector4EqualR'
+        OnClick = btnXMVector4EqualRClick
+        TabOrder = 2
+      end
+      object btnXMVector4EqualInt: TButton
+        Left = 8
+        Height = 25
+        Top = 152
+        Width = 176
+        Caption = 'XMVector4EqualInt'
+        OnClick = btnXMVector4EqualIntClick
+        TabOrder = 3
+      end
+      object btnXMVector4EqualIntR: TButton
+        Left = 8
+        Height = 25
+        Top = 184
+        Width = 176
+        Caption = 'XMVector4EqualIntR'
+        OnClick = btnXMVector4EqualIntRClick
+        TabOrder = 4
+      end
+      object btnXMVector4NearEqual: TButton
+        Left = 192
+        Height = 25
+        Top = 24
+        Width = 176
+        Caption = 'XMVector4NearEqual'
+        OnClick = btnXMVector4NearEqualClick
+        TabOrder = 5
+      end
+      object Button6: TButton
+        Left = 192
+        Height = 25
+        Top = 56
+        Width = 176
+        Caption = 'XMVector4NotEqual'
+        TabOrder = 6
+      end
+      object Button7: TButton
+        Left = 192
+        Height = 25
+        Top = 88
+        Width = 176
+        Caption = 'XMVector4NotEqualInt'
+        TabOrder = 7
+      end
+      object Button8: TButton
+        Left = 192
+        Height = 25
+        Top = 120
+        Width = 176
+        Caption = 'XMVector4Greater'
+        TabOrder = 8
+      end
+      object Button9: TButton
+        Left = 192
+        Height = 25
+        Top = 152
+        Width = 176
+        Caption = 'XMVector4GreaterR'
+        TabOrder = 9
+      end
+      object Button10: TButton
+        Left = 376
+        Height = 25
+        Top = 24
+        Width = 176
+        Caption = 'XMVector4GreaterOrEqualR'
+        TabOrder = 10
+      end
+      object Button11: TButton
+        Left = 376
+        Height = 25
+        Top = 56
+        Width = 176
+        Caption = 'XMVector4Less'
+        TabOrder = 11
+      end
+      object Button12: TButton
+        Left = 376
+        Height = 25
+        Top = 88
+        Width = 176
+        Caption = 'XMVector4LessOrEqual'
+        TabOrder = 12
+      end
+      object Button13: TButton
+        Left = 376
+        Height = 25
+        Top = 120
+        Width = 176
+        Caption = 'XMVector4InBounds'
+        TabOrder = 13
+      end
+      object Button14: TButton
+        Left = 376
+        Height = 25
+        Top = 152
+        Width = 176
+        Caption = 'XMVector4IsNaN'
+        TabOrder = 14
+      end
+      object Button15: TButton
+        Left = 560
+        Height = 25
+        Top = 24
+        Width = 176
+        Caption = 'XMVector4Dot'
+        TabOrder = 15
+      end
+      object Button16: TButton
+        Left = 560
+        Height = 25
+        Top = 56
+        Width = 176
+        Caption = 'XMVector4Cross'
+        TabOrder = 16
+      end
+      object Button17: TButton
+        Left = 560
+        Height = 25
+        Top = 88
+        Width = 176
+        Caption = 'XMVector4LengthSq'
+        TabOrder = 17
+      end
+      object Button18: TButton
+        Left = 560
+        Height = 25
+        Top = 120
+        Width = 176
+        Caption = 'XMVector4ReciprocalLengthEst'
+        TabOrder = 18
+      end
+      object Button19: TButton
+        Left = 560
+        Height = 25
+        Top = 152
+        Width = 176
+        Caption = 'XMVector4ReciprocalLength'
+        TabOrder = 19
+      end
+      object Button20: TButton
+        Left = 376
+        Height = 25
+        Top = 184
+        Width = 176
+        Caption = 'XMVector4IsInfinite'
+        TabOrder = 20
+      end
+      object Button21: TButton
+        Left = 560
+        Height = 25
+        Top = 184
+        Width = 176
+        Caption = 'XMVector4LengthEst'
+        TabOrder = 21
+      end
+      object Button23: TButton
+        Left = 744
+        Height = 25
+        Top = 56
+        Width = 176
+        Caption = 'XMVector4NormalizeEst'
+        TabOrder = 22
+      end
+      object Button22: TButton
+        Left = 744
+        Height = 25
+        Top = 24
+        Width = 176
+        Caption = 'XMVector4Length'
+        TabOrder = 23
+      end
+      object Button24: TButton
+        Left = 744
+        Height = 25
+        Top = 88
+        Width = 176
+        Caption = 'XMVector4Normalize'
+        TabOrder = 24
+      end
+      object Button25: TButton
+        Left = 744
+        Height = 25
+        Top = 120
+        Width = 176
+        Caption = 'XMVector4ClampLength'
+        TabOrder = 25
+      end
+      object Button26: TButton
+        Left = 744
+        Height = 25
+        Top = 152
+        Width = 176
+        Caption = 'XMVector4ClampLengthV'
+        TabOrder = 26
+      end
+      object Button27: TButton
+        Left = 744
+        Height = 25
+        Top = 184
+        Width = 176
+        Caption = 'XMVector4Reflect'
+        TabOrder = 27
+      end
+      object Button28: TButton
+        Left = 928
+        Height = 25
+        Top = 24
+        Width = 224
+        Caption = 'XMVector4Refract'
+        TabOrder = 28
+      end
+      object Button29: TButton
+        Left = 928
+        Height = 25
+        Top = 56
+        Width = 224
+        Caption = 'XMVector4RefractV'
+        TabOrder = 29
+      end
+      object Button30: TButton
+        Left = 928
+        Height = 25
+        Top = 88
+        Width = 224
+        Caption = 'XMVector4Orthogonal'
+        TabOrder = 30
+      end
+      object Button31: TButton
+        Left = 928
+        Height = 25
+        Top = 120
+        Width = 224
+        Caption = 'XMVector4AngleBetweenNormalsEst'
+        TabOrder = 31
+      end
+      object Button32: TButton
+        Left = 928
+        Height = 25
+        Top = 152
+        Width = 224
+        Caption = 'XMVector4AngleBetweenNormals'
+        TabOrder = 32
+      end
+      object Button33: TButton
+        Left = 928
+        Height = 25
+        Top = 184
+        Width = 224
+        Caption = 'XMVector4AngleBetweenVectors'
+        TabOrder = 33
+      end
+      object Button34: TButton
+        Left = 1160
+        Height = 25
+        Top = 24
+        Width = 176
+        Caption = 'XMVector4Transform'
+        TabOrder = 34
+      end
+      object Button35: TButton
+        Left = 1160
+        Height = 25
+        Top = 56
+        Width = 176
+        Caption = 'XMVector4TransformStream'
+        TabOrder = 35
       end
     end
   end
