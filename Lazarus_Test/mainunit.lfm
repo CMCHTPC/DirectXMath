@@ -29,8 +29,8 @@ object Form1: TForm1
     Height = 248
     Top = 24
     Width = 1462
-    ActivePage = TabSheet4
-    TabIndex = 2
+    ActivePage = TabSheet6
+    TabIndex = 3
     TabOrder = 1
     object TabSheet2: TTabSheet
       Caption = 'Misc'
@@ -1113,6 +1113,7 @@ object Form1: TForm1
         Top = 105
         Width = 136
         Caption = 'XMVectorSetX'
+        OnClick = btnXMVectorSetXClick
         TabOrder = 39
       end
       object btnXMVectorSetY: TButton
@@ -1121,6 +1122,7 @@ object Form1: TForm1
         Top = 137
         Width = 136
         Caption = 'XMVectorSetY'
+        OnClick = btnXMVectorSetYClick
         TabOrder = 40
       end
       object btnXMVectorSetZ: TButton
@@ -1129,6 +1131,7 @@ object Form1: TForm1
         Top = 168
         Width = 136
         Caption = 'XMVectorSetZ'
+        OnClick = btnXMVectorSetZClick
         TabOrder = 41
       end
       object btnXMVectorSetW: TButton
@@ -1137,6 +1140,7 @@ object Form1: TForm1
         Top = 9
         Width = 136
         Caption = 'XMVectorSetW'
+        OnClick = btnXMVectorSetWClick
         TabOrder = 42
       end
       object btnXMVectorSetByIndexPtr: TButton
@@ -1154,6 +1158,7 @@ object Form1: TForm1
         Top = 73
         Width = 136
         Caption = 'XMVectorSetXPtr'
+        OnClick = btnXMVectorSetXPtrClick
         TabOrder = 44
       end
       object btnXMVectorSetYPtr: TButton
@@ -1162,6 +1167,7 @@ object Form1: TForm1
         Top = 105
         Width = 136
         Caption = 'XMVectorSetYPtr'
+        OnClick = btnXMVectorSetYPtrClick
         TabOrder = 45
       end
       object btnXMVectorSetZPtr: TButton
@@ -1170,6 +1176,7 @@ object Form1: TForm1
         Top = 137
         Width = 136
         Caption = 'XMVectorSetZPtr'
+        OnClick = btnXMVectorSetZPtrClick
         TabOrder = 46
       end
       object btnXMVectorSetWPtr: TButton
@@ -1178,6 +1185,7 @@ object Form1: TForm1
         Top = 168
         Width = 136
         Caption = 'XMVectorSetWPtr'
+        OnClick = btnXMVectorSetWPtrClick
         TabOrder = 47
       end
       object btnXMVectorSetIntByIndex: TButton
@@ -1186,6 +1194,7 @@ object Form1: TForm1
         Top = 8
         Width = 136
         Caption = 'XMVectorSetIntByIndex'
+        OnClick = btnXMVectorSetIntByIndexClick
         TabOrder = 48
       end
       object btnXMVectorSetIntX: TButton
@@ -1194,6 +1203,7 @@ object Form1: TForm1
         Top = 40
         Width = 136
         Caption = 'XMVectorSetIntX'
+        OnClick = btnXMVectorSetIntXClick
         TabOrder = 49
       end
       object btnXMVectorSetIntY: TButton
@@ -1202,6 +1212,7 @@ object Form1: TForm1
         Top = 72
         Width = 136
         Caption = 'XMVectorSetIntY'
+        OnClick = btnXMVectorSetIntYClick
         TabOrder = 50
       end
       object btnXMVectorSetIntZ: TButton
@@ -1210,6 +1221,7 @@ object Form1: TForm1
         Top = 104
         Width = 136
         Caption = 'XMVectorSetIntZ'
+        OnClick = btnXMVectorSetIntZClick
         TabOrder = 51
       end
       object btnXMVectorSetIntW: TButton
@@ -1218,6 +1230,7 @@ object Form1: TForm1
         Top = 136
         Width = 136
         Caption = 'XMVectorSetIntW'
+        OnClick = btnXMVectorSetIntWClick
         TabOrder = 52
       end
       object btnXMVectorSetIntByIndexPtr: TButton
@@ -1226,6 +1239,7 @@ object Form1: TForm1
         Top = 167
         Width = 136
         Caption = 'XMVectorSetIntByIndexPtr'
+        OnClick = btnXMVectorSetIntByIndexPtrClick
         TabOrder = 53
       end
       object btnXMVectorSetIntXPtr: TButton
@@ -1234,6 +1248,7 @@ object Form1: TForm1
         Top = 8
         Width = 136
         Caption = 'XMVectorSetIntXPtr'
+        OnClick = btnXMVectorSetIntXPtrClick
         TabOrder = 54
       end
       object btnXMVectorSetIntYPtr: TButton
@@ -1242,6 +1257,7 @@ object Form1: TForm1
         Top = 40
         Width = 136
         Caption = 'XMVectorSetIntYPtr'
+        OnClick = btnXMVectorSetIntYPtrClick
         TabOrder = 55
       end
       object btnXMVectorSetIntZPtr: TButton
@@ -1250,6 +1266,7 @@ object Form1: TForm1
         Top = 72
         Width = 136
         Caption = 'XMVectorSetIntZPtr'
+        OnClick = btnXMVectorSetIntZPtrClick
         TabOrder = 56
       end
       object btnXMVectorSetIntWPtr: TButton
@@ -1258,6 +1275,7 @@ object Form1: TForm1
         Top = 104
         Width = 136
         Caption = 'XMVectorSetIntWPtr'
+        OnClick = btnXMVectorSetIntWPtrClick
         TabOrder = 57
       end
       object btnXMVectorSwizzle: TButton
@@ -1288,6 +1306,7 @@ object Form1: TForm1
         Top = 8
         Width = 144
         Caption = 'XMVectorSelectControl'
+        OnClick = btnXMVectorSelectControlClick
         TabOrder = 0
       end
       object btnXMVectorSelect: TButton
@@ -1296,6 +1315,7 @@ object Form1: TForm1
         Top = 36
         Width = 144
         Caption = 'XMVectorSelect'
+        OnClick = btnXMVectorSelectClick
         TabOrder = 1
       end
       object btnXMVectorMergeXY: TButton
@@ -1304,6 +1324,7 @@ object Form1: TForm1
         Top = 64
         Width = 144
         Caption = 'XMVectorMergeXY'
+        OnClick = btnXMVectorMergeXYClick
         TabOrder = 2
       end
       object btnXMVectorMergeZW: TButton

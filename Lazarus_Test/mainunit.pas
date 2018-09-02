@@ -410,11 +410,32 @@ type
         procedure btnXMVectorGetYPtrClick(Sender: TObject);
         procedure btnXMVectorGetZClick(Sender: TObject);
         procedure btnXMVectorGetZPtrClick(Sender: TObject);
+        procedure btnXMVectorMergeXYClick(Sender: TObject);
         procedure btnXMVectorReplicateIntClick(Sender: TObject);
         procedure btnXMVectorReplicateIntPtrClick(Sender: TObject);
         procedure btnXMVectorReplicatePtrClick(Sender: TObject);
+        procedure btnXMVectorSelectClick(Sender: TObject);
+        procedure btnXMVectorSelectControlClick(Sender: TObject);
         procedure btnXMVectorSetByIndexClick(Sender: TObject);
         procedure btnXMVectorSetByIndexPtrClick(Sender: TObject);
+        procedure btnXMVectorSetIntByIndexClick(Sender: TObject);
+        procedure btnXMVectorSetIntByIndexPtrClick(Sender: TObject);
+        procedure btnXMVectorSetIntWClick(Sender: TObject);
+        procedure btnXMVectorSetIntWPtrClick(Sender: TObject);
+        procedure btnXMVectorSetIntXClick(Sender: TObject);
+        procedure btnXMVectorSetIntXPtrClick(Sender: TObject);
+        procedure btnXMVectorSetIntYClick(Sender: TObject);
+        procedure btnXMVectorSetIntYPtrClick(Sender: TObject);
+        procedure btnXMVectorSetIntZClick(Sender: TObject);
+        procedure btnXMVectorSetIntZPtrClick(Sender: TObject);
+        procedure btnXMVectorSetWClick(Sender: TObject);
+        procedure btnXMVectorSetWPtrClick(Sender: TObject);
+        procedure btnXMVectorSetXClick(Sender: TObject);
+        procedure btnXMVectorSetXPtrClick(Sender: TObject);
+        procedure btnXMVectorSetYClick(Sender: TObject);
+        procedure btnXMVectorSetYPtrClick(Sender: TObject);
+        procedure btnXMVectorSetZClick(Sender: TObject);
+        procedure btnXMVectorSetZPtrClick(Sender: TObject);
         procedure btnXMVectorSplatEpsilonClick(Sender: TObject);
         procedure btnXMVectorSplatInfinityClick(Sender: TObject);
         procedure btnXMVectorSplatOneClick(Sender: TObject);
@@ -1418,6 +1439,12 @@ begin
    Memo1.Lines.Add('Resulting Float: ' + formatfloat('0.000000000E+00', f));
 end;
 
+procedure TForm1.btnXMVectorMergeXYClick(Sender: TObject);
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorMergeXY');
+end;
+
 
 
 procedure TForm1.btnXMVectorReplicateIntClick(Sender: TObject);
@@ -1426,6 +1453,7 @@ var
     f1: TXMVector;
 begin
     Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorReplicateInt');
     Memo1.Lines.Add('Float: ' + formatfloat('0.000000000E+00', f));
     Memo1.Lines.Add('Resulting TXMVector:');
     f1 := XMVectorReplicateInt(f);
@@ -1460,6 +1488,40 @@ begin
     Memo1.Lines.Add('Resulting TXMVector:');
     f1 := XMVectorReplicatePtr(@f);
     Memo1.Lines.Add('TXMVector F1: ' +DebugXMVectorFloat(f1));
+end;
+
+procedure TForm1.btnXMVectorSelectClick(Sender: TObject);
+var
+    f4: TXMVector ;
+    f1: TXMVector = (u32: (123, 256, 377, 445));
+    f2: TXMVector = (u32: (523, 656, 777, 845));
+    s1: TXMVector = (u32: ($FFFFFFFF, 0, $FFFFFFFF, $FF00FF00));
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSelect');
+    Memo1.Lines.Add('TXMVector f1:');
+    Memo1.Lines.Add(DebugXMVectorint(f1));
+    Memo1.Lines.Add('TXMVector f2:');
+    Memo1.Lines.Add(DebugXMVectorint(f2));
+    Memo1.Lines.Add('Select TXMVector s1:');
+    Memo1.Lines.Add(DebugXMVectorIntHex(s1));
+
+   f4 := XMVectorSelect(f1,f2,s1);
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorInt(f4));
+end;
+
+procedure TForm1.btnXMVectorSelectControlClick(Sender: TObject);
+var
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSelectControl');
+    Memo1.Lines.Add('XMVectorSelectControl(1,0,0,1)');
+
+   f2 := XMVectorSelectControl(1,0,0,1);
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorIntHex(f2));
 end;
 
 procedure TForm1.btnXMVectorSetByIndexClick(Sender: TObject);
@@ -1525,6 +1587,362 @@ begin
    f2 := XMVectorSetByIndexPtr(f1,@f,3);
    Memo1.Lines.Add('Setting Float w: ' + formatfloat('0.000000000E+00', f));
     Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorFloat(f2));
+end;
+
+procedure TForm1.btnXMVectorSetIntByIndexClick(Sender: TObject);
+var
+    f: uint32 = 532;
+    f1: TXMVector = (u32: (123, 256, 377, 445));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetIntByIndex');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorInt(f1));
+
+   f2 := XMVectorSetIntByIndex(f1,f,0);
+   Memo1.Lines.Add('Setting INT x: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorInt(f2));
+
+   f2 := XMVectorSetIntByIndex(f1,f,1);
+   Memo1.Lines.Add('Setting INT y: ' + formatfloat('0.000000000E+00', f));
+    Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorInt(f2));
+
+   f2 := XMVectorSetIntByIndex(f1,f,2);
+   Memo1.Lines.Add('Setting INT z: ' + formatfloat('0.000000000E+00', f));
+    Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorInt(f2));
+
+   f2 := XMVectorSetIntByIndex(f1,f,3);
+   Memo1.Lines.Add('Setting INT w: ' + formatfloat('0.000000000E+00', f));
+    Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorInt(f2));
+end;
+
+procedure TForm1.btnXMVectorSetIntByIndexPtrClick(Sender: TObject);
+var
+    f: uint32 = 532;
+    f1: TXMVector = (u32: (123, 256, 377, 445));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetIntByIndexPtr');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorInt(f1));
+
+   f2 := XMVectorSetIntByIndexPtr(f1,@f,0);
+   Memo1.Lines.Add('Setting Int x: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorInt(f2));
+
+   f2 := XMVectorSetIntByIndexPtr(f1,@f,1);
+   Memo1.Lines.Add('Setting Int y: ' + formatfloat('0.000000000E+00', f));
+    Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorInt(f2));
+
+   f2 := XMVectorSetIntByIndexPtr(f1,@f,2);
+   Memo1.Lines.Add('Setting Int z: ' + formatfloat('0.000000000E+00', f));
+    Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorInt(f2));
+
+   f2 := XMVectorSetIntByIndexPtr(f1,@f,3);
+   Memo1.Lines.Add('Setting Int w: ' + formatfloat('0.000000000E+00', f));
+    Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorInt(f2));
+end;
+
+procedure TForm1.btnXMVectorSetIntWClick(Sender: TObject);
+var
+    f: uint32 = 532;
+    f1: TXMVector = (u32: (123, 256, 377, 445));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetIntW');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorINT(f1));
+
+   f2 := XMVectorSetIntW(f1,f);
+   Memo1.Lines.Add('Setting INT w: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorINT(f2));
+end;
+
+procedure TForm1.btnXMVectorSetIntWPtrClick(Sender: TObject);
+var
+    f: uint32 = 532;
+    f1: TXMVector = (u32: (123, 256, 377, 445));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetIntWPtr');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorINT(f1));
+
+   f2 := XMVectorSetIntWPtr(f1,@f);
+   Memo1.Lines.Add('Setting INT w: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorINT(f2));
+end;
+
+procedure TForm1.btnXMVectorSetIntXClick(Sender: TObject);
+var
+    f: uint32 = 532;
+    f1: TXMVector = (u32: (123, 256, 377, 445));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetIntX');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorINT(f1));
+
+   f2 := XMVectorSetIntX(f1,f);
+   Memo1.Lines.Add('Setting INT x: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorINT(f2));
+end;
+
+procedure TForm1.btnXMVectorSetIntXPtrClick(Sender: TObject);
+var
+    f: uint32 = 532;
+    f1: TXMVector = (u32: (123, 256, 377, 445));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetIntXPtr');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorINT(f1));
+
+   f2 := XMVectorSetIntXPtr(f1,@f);
+   Memo1.Lines.Add('Setting INT x: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorINT(f2));
+end;
+
+procedure TForm1.btnXMVectorSetIntYClick(Sender: TObject);
+var
+    f: uint32 = 532;
+    f1: TXMVector = (u32: (123, 256, 377, 445));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetIntY');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorINT(f1));
+
+   f2 := XMVectorSetIntY(f1,f);
+   Memo1.Lines.Add('Setting INT y: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorINT(f2));
+end;
+
+procedure TForm1.btnXMVectorSetIntYPtrClick(Sender: TObject);
+var
+    f: uint32 = 532;
+    f1: TXMVector = (u32: (123, 256, 377, 445));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetIntYPtr');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorINT(f1));
+
+   f2 := XMVectorSetIntYPtr(f1,@f);
+   Memo1.Lines.Add('Setting INT y: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorINT(f2));
+end;
+
+procedure TForm1.btnXMVectorSetIntZClick(Sender: TObject);
+var
+    f: uint32 = 532;
+    f1: TXMVector = (u32: (123, 256, 377, 445));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetIntZ');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorINT(f1));
+
+   f2 := XMVectorSetIntZ(f1,f);
+   Memo1.Lines.Add('Setting INT z: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorINT(f2));
+end;
+
+procedure TForm1.btnXMVectorSetIntZPtrClick(Sender: TObject);
+var
+    f: uint32 = 532;
+    f1: TXMVector = (u32: (123, 256, 377, 445));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetIntZPtr');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorINT(f1));
+
+   f2 := XMVectorSetIntZPtr(f1,@f);
+   Memo1.Lines.Add('Setting INT z: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorINT(f2));
+end;
+
+procedure TForm1.btnXMVectorSetWClick(Sender: TObject);
+var
+    f: single = 5.32;
+    f1: TXMVector = (f32: (1.23, 2.56, 3.77, 4.45));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetW');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorFloat(f1));
+
+   f2 := XMVectorSetW(f1,f);
+   Memo1.Lines.Add('Setting Float w: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorFloat(f2));
+end;
+
+procedure TForm1.btnXMVectorSetWPtrClick(Sender: TObject);
+var
+    f: single = 5.32;
+    f1: TXMVector = (f32: (1.23, 2.56, 3.77, 4.45));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetWPtr');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorFloat(f1));
+
+   f2 := XMVectorSetWPtr(f1,@f);
+   Memo1.Lines.Add('Setting Float w: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorFloat(f2));
+end;
+
+procedure TForm1.btnXMVectorSetXClick(Sender: TObject);
+var
+    f: single = 5.32;
+    f1: TXMVector = (f32: (1.23, 2.56, 3.77, 4.45));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetX');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorFloat(f1));
+
+   f2 := XMVectorSetX(f1,f);
+   Memo1.Lines.Add('Setting Float x: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorFloat(f2));
+
+end;
+
+procedure TForm1.btnXMVectorSetXPtrClick(Sender: TObject);
+var
+    f: single = 5.32;
+    f1: TXMVector = (f32: (1.23, 2.56, 3.77, 4.45));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetXPtr');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorFloat(f1));
+
+   f2 := XMVectorSetXPtr(f1,@f);
+   Memo1.Lines.Add('Setting Float x: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorFloat(f2));
+end;
+
+procedure TForm1.btnXMVectorSetYClick(Sender: TObject);
+var
+    f: single = 5.32;
+    f1: TXMVector = (f32: (1.23, 2.56, 3.77, 4.45));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetY');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorFloat(f1));
+
+   f2 := XMVectorSetY(f1,f);
+   Memo1.Lines.Add('Setting Float y: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorFloat(f2));
+end;
+
+procedure TForm1.btnXMVectorSetYPtrClick(Sender: TObject);
+var
+    f: single = 5.32;
+    f1: TXMVector = (f32: (1.23, 2.56, 3.77, 4.45));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetYPtr');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorFloat(f1));
+
+   f2 := XMVectorSetYPtr(f1,@f);
+   Memo1.Lines.Add('Setting Float y: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorFloat(f2));
+
+end;
+
+procedure TForm1.btnXMVectorSetZClick(Sender: TObject);
+var
+    f: single = 5.32;
+    f1: TXMVector = (f32: (1.23, 2.56, 3.77, 4.45));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetZ');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorFloat(f1));
+
+   f2 := XMVectorSetZ(f1,f);
+   Memo1.Lines.Add('Setting Float z: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
+   Memo1.Lines.Add(DebugXMVectorFloat(f2));
+end;
+
+procedure TForm1.btnXMVectorSetZPtrClick(Sender: TObject);
+var
+    f: single = 5.32;
+    f1: TXMVector = (f32: (1.23, 2.56, 3.77, 4.45));
+    f2: TXMVector ;
+begin
+    Memo1.Clear;
+    Memo1.Lines.Add('Testing XMVectorSetZPtr');
+
+    Memo1.Lines.Add('Starting TXMVector:');
+    Memo1.Lines.Add(DebugXMVectorFloat(f1));
+
+   f2 := XMVectorSetZPtr(f1,@f);
+   Memo1.Lines.Add('Setting Float z: ' + formatfloat('0.000000000E+00', f));
+   Memo1.Lines.Add('Resulting TXMVector:');
    Memo1.Lines.Add(DebugXMVectorFloat(f2));
 end;
 

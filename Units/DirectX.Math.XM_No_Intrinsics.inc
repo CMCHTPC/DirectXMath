@@ -812,7 +812,7 @@ end;
 
 // Initialize a vector with a replicated floating point value passed by pointer
 
-function XMVectorReplicate(constref Value: single): TXMVECTOR;
+function XMVectorReplicate(const Value: single): TXMVECTOR;
 begin
     Result.f32[0] := Value;
     Result.f32[1] := Value;
@@ -1303,7 +1303,7 @@ begin
 end;
 
 
-
+// Performs a per-component selection between two input vectors and returns the resulting vector.
 function XMVectorSelect(constref V1: TXMVECTOR; constref V2: TXMVECTOR; constref Control: TXMVECTOR): TXMVECTOR;
 begin
     Result.u32[0] := (V1.u32[0] and not Control.u32[0]) or (V2.u32[0] and Control.u32[0]);
@@ -2082,12 +2082,12 @@ end;
 
 
 
-function XMVectorMultiply(constref V1: TXMVECTOR; constref V2: TXMVECTOR): TXMVECTOR;
+function XMVectorMultiply(const V1: TXMVECTOR; const V2: TXMVECTOR): TXMVECTOR;
 begin
     Result.f32[0] := V1.f32[0] * V2.f32[0];
-    Result.f32[0] := V1.f32[1] * V2.f32[1];
-    Result.f32[0] := V1.f32[2] * V2.f32[2];
-    Result.f32[0] := V1.f32[3] * V2.f32[3];
+    Result.f32[1] := V1.f32[1] * V2.f32[1];
+    Result.f32[2] := V1.f32[2] * V2.f32[2];
+    Result.f32[3] := V1.f32[3] * V2.f32[3];
 end;
 
 
@@ -2183,7 +2183,7 @@ end;
 
 
 
-function XMVectorReciprocalSqrt(constref V: TXMVECTOR): TXMVECTOR;
+function XMVectorReciprocalSqrt(const V: TXMVECTOR): TXMVECTOR;
 begin
     Result.f32[0] := 1.0 / sqrt(V.f32[0]);
     Result.f32[1] := 1.0 / sqrt(V.f32[1]);
@@ -3274,11 +3274,11 @@ end;
 // Computation operations
 //------------------------------------------------------------------------------
 
-function XMVector3Dot(constref V1: TXMVECTOR; constref V2: TXMVECTOR): TXMVECTOR;
+function XMVector3Dot(const V1: TXMVECTOR; const V2: TXMVECTOR): TXMVECTOR;
 var
     fValue: single;
 begin
-    fValue := V1.f32[0] * V2.f32[0] + V1.f32[1] * V2.f32[1] + V1.f32[2] * V2.f32[2];
+    fvalue:=(V1.f32[0] * V2.f32[0]) + (V1.f32[1] * V2.f32[1]) + (V1.f32[2] * V2.f32[2]);
     Result.f32[0] := fValue;
     Result.f32[1] := fValue;
     Result.f32[2] := fValue;
@@ -3287,7 +3287,7 @@ end;
 
 // [ V1.y*V2.z - V1.z*V2.y, V1.z*V2.x - V1.x*V2.z, V1.x*V2.y - V1.y*V2.x ]
 
-function XMVector3Cross(constref V1: TXMVECTOR; constref V2: TXMVECTOR): TXMVECTOR;
+function XMVector3Cross(const V1: TXMVECTOR; const V2: TXMVECTOR): TXMVECTOR;
 begin
     Result.f32[0] := (V1.f32[1] * V2.f32[2]) - (V1.f32[2] * V2.f32[1]);
     Result.f32[1] := (V1.f32[2] * V2.f32[0]) - (V1.f32[0] * V2.f32[2]);
@@ -3297,15 +3297,17 @@ end;
 
 
 
-function XMVector3ReciprocalLength(constref V: TXMVECTOR): TXMVECTOR;
+function XMVector3ReciprocalLength(const V: TXMVECTOR): TXMVECTOR;
+var
+    x:TXMVECTOR;
 begin
-    Result := XMVector3LengthSq(V);
-    Result := XMVectorReciprocalSqrt(Result);
+    x := XMVector3LengthSq(V);
+    Result := XMVectorReciprocalSqrt(x);
 end;
 
 
 
-function XMVector3ReciprocalLengthEst(constref V: TXMVECTOR): TXMVECTOR;
+function XMVector3ReciprocalLengthEst(const V: TXMVECTOR): TXMVECTOR;
 begin
     Result := XMVector3LengthSq(V);
     Result := XMVectorReciprocalSqrtEst(Result);

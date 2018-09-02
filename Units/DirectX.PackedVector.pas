@@ -32,9 +32,9 @@ type
     { TXMCOLOR }
 
     TXMCOLOR = record
-        constructor Create(Color: uint32);
-        constructor Create(_r, _g, _b, _a: single);
-        constructor Create(pArray: Psingle);
+        constructor Create(Color: uint32); overload;
+        constructor Create(_r, _g, _b, _a: single);overload;
+        constructor Create(pArray: Psingle); overload;
         class operator Implicit(a: TXMCOLOR): uint32;
         case integer of
             0: (b: byte;  // Blue:    0/255 to 255/255
@@ -56,7 +56,7 @@ type
     { TXMHALF2 }
 
     TXMHALF2 = record
-        constructor Create(_x, _y: THALF);
+        constructor Create(_x, _y: THALF); overload;
         constructor Create(pArray: PHALF); overload;
         constructor Create(pArray: Psingle); overload;
         case integer of
@@ -121,8 +121,6 @@ begin
 end;
 
 class operator TXMCOLOR.Implicit(a: TXMCOLOR): uint32;
-var
-    Result: UInt32;
 begin
     Result := a.c;
 end;

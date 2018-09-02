@@ -1668,7 +1668,7 @@ begin
         CenterOfMass := XMVectorAdd(CenterOfMass, Point);
     end;
 
-    CenterOfMass := XMVectorMultiply(CenterOfMass, XMVectorReciprocal(XMVectorReplicate(single(Count))));
+    CenterOfMass := XMVectorMultiply(CenterOfMass, XMVectorReciprocal(XMVectorReplicate((Count))));
 
     // Compute the inertia tensor of the points around the center of mass.
     // Using the center of mass is not strictly necessary, but will hopefully

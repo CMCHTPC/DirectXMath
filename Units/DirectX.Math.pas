@@ -126,6 +126,7 @@ interface
 uses
     Windows, Classes, SysUtils;
 
+(*
 {$IFDEF CPUX86_64}
        {$CODEALIGN CONSTMIN=16}
        {$CODEALIGN RECORDMIN=16}
@@ -133,11 +134,10 @@ uses
 {$ELSE}
        {$Z4}
        {$CODEALIGN CONSTMIN=16}
-       {$CODEALIGN RECORDMIN=4}
-
+       {$CODEALIGN RECORDMIN=16}
 {$ENDIF}
 
-
+*)
 
 const
     DIRECTX_MATH_VERSION = 311;
@@ -213,7 +213,7 @@ type
     TCPUType = (CPU_XM_SSE3, CPU_XM_SSE4, CPU_AVX, CPU_AVX2);
     TCPUInfo = array [0..3] of cardinal;
 
-    {$PACKRECORDS 16}
+ //   {$PACKRECORDS 16}
     { TXMVECTOR }
     //------------------------------------------------------------------------------
     // Vector intrinsic: Four 32 bit floating point components aligned on a 16 byte
@@ -317,7 +317,7 @@ type
     end;
 
 
-    {$PACKRECORDS 4}
+ //   {$PACKRECORDS 4}
     //------------------------------------------------------------------------------
     // 2D Vector; 32 bit floating point components
 
@@ -499,14 +499,14 @@ type
     { TXMFLOAT4X4A - 4x4 Matrix: 32 bit floating point components aligned on a 16 byte boundary }
 
 
-
+(*
 {$IFDEF CPUX86_64}
     {$PACKRECORDS 16}
     {$CODEALIGN RECORDMIN=16}
 {$ELSE}
-    {$PACKRECORDS 16}
+    {$PACKRECORDS 4}
 {$ENDIF}
-
+ *)
 
 
     // 2D Vector; 32 bit floating point components aligned on a 16 byte boundary
@@ -584,12 +584,13 @@ type
     end;
     PXMFLOAT4X4A = ^TXMFLOAT4X4A;
 
-
+ (*
 {$IFDEF CPUX86_64}
     {$PACKRECORDS 8}
 {$ELSE}
     {$PACKRECORDS 4}
 {$ENDIF}
+*)
 
 {****************************************************************************
  *
@@ -873,7 +874,7 @@ procedure XMStoreFloat4x4A(var pDestination: TXMFLOAT4X4A; constref M: TXMMATRIX
 function XMVectorZero(): TXMVECTOR;
 function XMVectorSet(const x, y, z, w: single): TXMVECTOR;
 function XMVectorSetInt(const x, y, z, w: UINT32): TXMVECTOR;
-function XMVectorReplicate(constref Value: single): TXMVECTOR;
+function XMVectorReplicate(const Value: single): TXMVECTOR;
 function XMVectorReplicatePtr(pValue: PSingle): TXMVECTOR;
 function XMVectorReplicateInt(constref Value: UINT32): TXMVECTOR;
 function XMVectorReplicateIntPtr(pValue: PUINT32): TXMVECTOR;
@@ -993,7 +994,7 @@ function XMVectorSum(constref V: TXMVECTOR): TXMVECTOR;
 function XMVectorAddAngles(constref V1: TXMVECTOR; constref V2: TXMVECTOR): TXMVECTOR;
 function XMVectorSubtract(constref V1: TXMVECTOR; constref V2: TXMVECTOR): TXMVECTOR;
 function XMVectorSubtractAngles(constref V1: TXMVECTOR; constref V2: TXMVECTOR): TXMVECTOR;
-function XMVectorMultiply(constref V1: TXMVECTOR; constref V2: TXMVECTOR): TXMVECTOR;
+function XMVectorMultiply(const V1: TXMVECTOR; const V2: TXMVECTOR): TXMVECTOR;
 function XMVectorMultiplyAdd(constref V1: TXMVECTOR; constref V2: TXMVECTOR; constref V3: TXMVECTOR): TXMVECTOR;
 function XMVectorDivide(constref V1: TXMVECTOR; constref V2: TXMVECTOR): TXMVECTOR;
 function XMVectorNegativeMultiplySubtract(constref V1: TXMVECTOR; constref V2: TXMVECTOR; constref V3: TXMVECTOR): TXMVECTOR;
@@ -1003,7 +1004,7 @@ function XMVectorReciprocal(constref V: TXMVECTOR): TXMVECTOR;
 function XMVectorSqrtEst(constref V: TXMVECTOR): TXMVECTOR;
 function XMVectorSqrt(constref V: TXMVECTOR): TXMVECTOR;
 function XMVectorReciprocalSqrtEst(constref V: TXMVECTOR): TXMVECTOR;
-function XMVectorReciprocalSqrt(constref V: TXMVECTOR): TXMVECTOR;
+function XMVectorReciprocalSqrt(const V: TXMVECTOR): TXMVECTOR;
 function XMVectorExp2(constref V: TXMVECTOR): TXMVECTOR;
 function XMVectorExpE(constref V: TXMVECTOR): TXMVECTOR;
 function XMVectorExp(constref V: TXMVECTOR): TXMVECTOR;
@@ -1130,11 +1131,11 @@ function XMVector3InBounds(constref V: TXMVECTOR; constref Bounds: TXMVECTOR): b
 function XMVector3IsNaN(constref V: TXMVECTOR): boolean;
 function XMVector3IsInfinite(constref V: TXMVECTOR): boolean;
 
-function XMVector3Dot(constref V1: TXMVECTOR; constref V2: TXMVECTOR): TXMVECTOR;
-function XMVector3Cross(constref V1: TXMVECTOR; constref V2: TXMVECTOR): TXMVECTOR;
-function XMVector3LengthSq(constref V: TXMVECTOR): TXMVECTOR;
-function XMVector3ReciprocalLengthEst(constref V: TXMVECTOR): TXMVECTOR;
-function XMVector3ReciprocalLength(constref V: TXMVECTOR): TXMVECTOR;
+function XMVector3Dot(const V1: TXMVECTOR; const V2: TXMVECTOR): TXMVECTOR;
+function XMVector3Cross(const V1: TXMVECTOR; const V2: TXMVECTOR): TXMVECTOR;
+function XMVector3LengthSq(const V: TXMVECTOR): TXMVECTOR;
+function XMVector3ReciprocalLengthEst(const V: TXMVECTOR): TXMVECTOR;
+function XMVector3ReciprocalLength(const V: TXMVECTOR): TXMVECTOR;
 function XMVector3LengthEst(constref V: TXMVECTOR): TXMVECTOR;
 function XMVector3Length(constref V: TXMVECTOR): TXMVECTOR;
 function XMVector3NormalizeEst(constref V: TXMVECTOR): TXMVECTOR;
@@ -1147,9 +1148,9 @@ function XMVector3RefractV(constref Incident: TXMVECTOR; constref Normal: TXMVEC
 function XMVector3Orthogonal(constref V: TXMVECTOR): TXMVECTOR;
 function XMVector3AngleBetweenNormalsEst(constref N1: TXMVECTOR; constref N2: TXMVECTOR): TXMVECTOR;
 function XMVector3AngleBetweenNormals(constref N1: TXMVECTOR; constref N2: TXMVECTOR): TXMVECTOR;
-function XMVector3AngleBetweenVectors(constref V1: TXMVECTOR; constref V2: TXMVECTOR): TXMVECTOR;
+function XMVector3AngleBetweenVectors(const V1: TXMVECTOR; const V2: TXMVECTOR): TXMVECTOR;
 function XMVector3LinePointDistance(constref LinePoint1: TXMVECTOR; constref LinePoint2: TXMVECTOR; constref Point: TXMVECTOR): TXMVECTOR;
-procedure XMVector3ComponentsFromNormal(out pParallel: TXMVECTOR; out pPerpendicular: TXMVECTOR; constref V: TXMVECTOR; constref Normal: TXMVECTOR);
+procedure XMVector3ComponentsFromNormal(out pParallel: TXMVECTOR; out pPerpendicular: TXMVECTOR; constref A: TXMVECTOR; constref Normal: TXMVECTOR);
 function XMVector3Rotate(constref V: TXMVECTOR; constref RotationQuaternion: TXMVECTOR): TXMVECTOR;
 function XMVector3InverseRotate(constref V: TXMVECTOR; constref RotationQuaternion: TXMVECTOR): TXMVECTOR;
 function XMVector3Transform(constref V: TXMVECTOR; constref M: TXMMATRIX): TXMVECTOR;
@@ -2873,7 +2874,7 @@ end;
 
 
 
-function XMVector3LengthSq(constref V: TXMVECTOR): TXMVECTOR;
+function XMVector3LengthSq(const V: TXMVECTOR): TXMVECTOR;
 begin
     Result := XMVector3Dot(V, V);
 end;
@@ -3001,7 +3002,7 @@ end;
 
 
 
-function XMVector3AngleBetweenVectors(constref V1: TXMVECTOR; constref V2: TXMVECTOR): TXMVECTOR;
+function XMVector3AngleBetweenVectors(const V1: TXMVECTOR; const V2: TXMVECTOR): TXMVECTOR;
 var
     L1, L2, Dot, CosAngle: TXMVECTOR;
 begin
@@ -3048,14 +3049,14 @@ end;
 
 
 
-procedure XMVector3ComponentsFromNormal(out pParallel: TXMVECTOR; out pPerpendicular: TXMVECTOR; constref V: TXMVECTOR; constref Normal: TXMVECTOR);
+procedure XMVector3ComponentsFromNormal(out pParallel: TXMVECTOR; out pPerpendicular: TXMVECTOR; constref A: TXMVECTOR; constref Normal: TXMVECTOR);
 var
     Scale: TXMVECTOR;
 begin
-    Scale := XMVector3Dot(V, Normal);
+    Scale := XMVector3Dot(A, Normal);
 
     pParallel := XMVectorMultiply(Normal, Scale);
-    pPerpendicular := XMVectorSubtract(V, pParallel);
+    pPerpendicular := XMVectorSubtract(A, pParallel);
 end;
 
 
@@ -5010,9 +5011,9 @@ begin
     // Map Value to y in [-pi,pi], x = 2*pi*quotient + remainder.
     quotient := XM_1DIV2PI * Value;
     if (Value >= 0.0) then
-        quotient := (quotient + 0.5)
+        quotient := (trunc(quotient) + 0.5)
     else
-        quotient := (quotient - 0.5);
+        quotient := (trunc(quotient) - 0.5);
 
     y := Value - XM_2PI * quotient;
 
